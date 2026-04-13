@@ -18,7 +18,7 @@ export default function Hero() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
             <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#6edea0', flexShrink: 0 }} />
             <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.16em', color: 'rgba(110,222,160,0.55)', fontWeight: 500 }}>
-              CRM &amp; IA
+              ESN CRM &amp; IA
             </span>
           </div>
 
