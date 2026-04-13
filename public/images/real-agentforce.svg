@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" fill="none">
+  <rect width="600" height="280" fill="#0a1a10"/>
+  <defs>
+    <linearGradient id="ag1" x1="300" y1="0" x2="300" y2="280">
+      <stop offset="0%" stop-color="#6edea0" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#6edea0" stop-opacity="0.01"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="280" fill="url(#ag1)"/>
+  <!-- Neural network / AI agent pattern -->
+  <!-- Input layer -->
+  <circle cx="100" cy="80" r="12" stroke="#6edea0" stroke-opacity="0.2" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <circle cx="100" cy="140" r="12" stroke="#6edea0" stroke-opacity="0.2" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <circle cx="100" cy="200" r="12" stroke="#6edea0" stroke-opacity="0.2" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <!-- Hidden layer 1 -->
+  <circle cx="250" cy="95" r="16" stroke="#6edea0" stroke-opacity="0.25" stroke-width="1.5" fill="#6edea0" fill-opacity="0.05"/>
+  <circle cx="250" cy="185" r="16" stroke="#6edea0" stroke-opacity="0.25" stroke-width="1.5" fill="#6edea0" fill-opacity="0.05"/>
+  <!-- Hidden layer 2 -->
+  <circle cx="390" cy="110" r="14" stroke="#6edea0" stroke-opacity="0.3" stroke-width="1.5" fill="#6edea0" fill-opacity="0.06"/>
+  <circle cx="390" cy="170" r="14" stroke="#6edea0" stroke-opacity="0.3" stroke-width="1.5" fill="#6edea0" fill-opacity="0.06"/>
+  <!-- Output - AI agent -->
+  <circle cx="510" cy="140" r="28" stroke="#6edea0" stroke-opacity="0.4" stroke-width="2" fill="#6edea0" fill-opacity="0.08"/>
+  <circle cx="510" cy="140" r="14" fill="#6edea0" fill-opacity="0.15"/>
+  <!-- Connections -->
+  <line x1="112" y1="80" x2="234" y2="95" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="112" y1="80" x2="234" y2="185" stroke="#6edea0" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="112" y1="140" x2="234" y2="95" stroke="#6edea0" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="112" y1="140" x2="234" y2="185" stroke="#6edea0" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="112" y1="200" x2="234" y2="185" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="112" y1="200" x2="234" y2="95" stroke="#6edea0" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="266" y1="95" x2="376" y2="110" stroke="#6edea0" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="266" y1="95" x2="376" y2="170" stroke="#6edea0" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="266" y1="185" x2="376" y2="110" stroke="#6edea0" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="266" y1="185" x2="376" y2="170" stroke="#6edea0" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="404" y1="110" x2="482" y2="135" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1"/>
+  <line x1="404" y1="170" x2="482" y2="145" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1"/>
+  <!-- Pulse rings around agent -->
+  <circle cx="510" cy="140" r="42" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="510" cy="140" r="56" stroke="#6edea0" stroke-opacity="0.05" stroke-width="1"/>
+  <!-- Small accent dots -->
+  <circle cx="100" cy="80" r="3" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="100" cy="140" r="3" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="100" cy="200" r="3" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="510" cy="140" r="5" fill="#6edea0" fill-opacity="0.6"/>
+</svg>

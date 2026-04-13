@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" fill="none">
+  <rect width="600" height="280" fill="#0a1a10"/>
+  <defs>
+    <linearGradient id="ad1" x1="0" y1="0" x2="600" y2="280">
+      <stop offset="0%" stop-color="#6edea0" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#6edea0" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="280" fill="url(#ad1)"/>
+  <!-- Rising adoption curve -->
+  <path d="M60 220 Q150 210 200 190 Q280 150 350 120 Q420 90 480 60 L540 35" stroke="#6edea0" stroke-opacity="0.35" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Area under curve -->
+  <path d="M60 220 Q150 210 200 190 Q280 150 350 120 Q420 90 480 60 L540 35 L540 250 L60 250 Z" fill="#6edea0" fill-opacity="0.04"/>
+  <!-- Baseline -->
+  <line x1="60" y1="250" x2="540" y2="250" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <!-- Y axis -->
+  <line x1="60" y1="30" x2="60" y2="250" stroke="#6edea0" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- Grid lines horizontal -->
+  <line x1="60" y1="190" x2="540" y2="190" stroke="#6edea0" stroke-opacity="0.04" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="60" y1="140" x2="540" y2="140" stroke="#6edea0" stroke-opacity="0.04" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="60" y1="90" x2="540" y2="90" stroke="#6edea0" stroke-opacity="0.04" stroke-width="1" stroke-dasharray="4 6"/>
+  <!-- Milestone dots on curve -->
+  <circle cx="120" cy="215" r="4" fill="#6edea0" fill-opacity="0.3"/>
+  <circle cx="200" cy="190" r="5" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="350" cy="120" r="6" fill="#6edea0" fill-opacity="0.5"/>
+  <circle cx="480" cy="60" r="7" fill="#6edea0" fill-opacity="0.6"/>
+  <!-- Labels (abstract bars) -->
+  <text x="115" y="240" font-size="9" fill="#6edea0" fill-opacity="0.2" font-family="sans-serif">Ancrer</text>
+  <text x="190" y="210" font-size="9" fill="#6edea0" fill-opacity="0.25" font-family="sans-serif">Embarquer</text>
+  <text x="340" y="142" font-size="9" fill="#6edea0" fill-opacity="0.3" font-family="sans-serif">Former</text>
+  <text x="468" y="82" font-size="9" fill="#6edea0" fill-opacity="0.35" font-family="sans-serif">Mesurer</text>
+  <!-- 40% → 90% visual -->
+  <text x="75" y="215" font-size="10" fill="#6edea0" fill-opacity="0.15" font-family="sans-serif">40%</text>
+  <text x="490" y="50" font-size="11" fill="#6edea0" fill-opacity="0.35" font-family="sans-serif">92%</text>
+</svg>

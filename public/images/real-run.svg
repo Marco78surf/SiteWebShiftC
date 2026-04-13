@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" fill="none">
+  <rect width="600" height="280" fill="#0a1a10"/>
+  <defs>
+    <linearGradient id="rg1" x1="300" y1="0" x2="300" y2="280">
+      <stop offset="0%" stop-color="#6edea0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#6edea0" stop-opacity="0.01"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="280" fill="url(#rg1)"/>
+  <!-- Infinite loop / continuous cycle -->
+  <ellipse cx="300" cy="140" rx="160" ry="80" stroke="#6edea0" stroke-opacity="0.12" stroke-width="1.5" fill="none"/>
+  <ellipse cx="300" cy="140" rx="120" ry="60" stroke="#6edea0" stroke-opacity="0.18" stroke-width="1.5" fill="none"/>
+  <ellipse cx="300" cy="140" rx="80" ry="40" stroke="#6edea0" stroke-opacity="0.25" stroke-width="1.5" fill="#6edea0" fill-opacity="0.02"/>
+  <!-- Cycle arrows at cardinal points -->
+  <polygon points="460,140 450,133 450,147" fill="#6edea0" fill-opacity="0.25"/>
+  <polygon points="140,140 150,147 150,133" fill="#6edea0" fill-opacity="0.25"/>
+  <polygon points="300,60 307,70 293,70" fill="#6edea0" fill-opacity="0.2"/>
+  <polygon points="300,220 293,210 307,210" fill="#6edea0" fill-opacity="0.2"/>
+  <!-- Center icon - shield/check -->
+  <circle cx="300" cy="140" r="24" stroke="#6edea0" stroke-opacity="0.35" stroke-width="1.5" fill="#6edea0" fill-opacity="0.08"/>
+  <path d="M290 140 L297 148 L312 132" stroke="#6edea0" stroke-opacity="0.5" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Phase labels around orbit -->
+  <circle cx="380" cy="100" r="18" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.03"/>
+  <circle cx="380" cy="180" r="18" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.03"/>
+  <circle cx="220" cy="100" r="18" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.03"/>
+  <circle cx="220" cy="180" r="18" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.03"/>
+  <!-- Small dots -->
+  <circle cx="380" cy="100" r="3" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="380" cy="180" r="3" fill="#6edea0" fill-opacity="0.35"/>
+  <circle cx="220" cy="100" r="3" fill="#6edea0" fill-opacity="0.35"/>
+  <circle cx="220" cy="180" r="3" fill="#6edea0" fill-opacity="0.4"/>
+  <!-- Outer subtle particles -->
+  <circle cx="500" cy="70" r="2" fill="#6edea0" fill-opacity="0.15"/>
+  <circle cx="100" cy="210" r="2" fill="#6edea0" fill-opacity="0.15"/>
+  <circle cx="520" cy="200" r="1.5" fill="#6edea0" fill-opacity="0.1"/>
+  <circle cx="80" cy="80" r="1.5" fill="#6edea0" fill-opacity="0.1"/>
+</svg>

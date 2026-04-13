@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Green circle -->
+  <circle cx="32" cy="32" r="30" fill="#6edea0"/>
+  <!-- White triangle notch bottom-left -->
+  <polygon points="2,52 18,52 2,36" fill="#0b1a0f"/>
+  <!-- Dark C letter -->
+  <text x="32" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#0b1a0f">C</text>
+</svg>

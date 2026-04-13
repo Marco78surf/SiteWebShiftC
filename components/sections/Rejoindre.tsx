@@ -11,11 +11,11 @@ const VALEURS = [
 ]
 
 const TEMOIGNAGES = [
-  { initial: 'M', name: 'Matthieu', role: 'Expert CRM Salesforce · Membre fondateur', tag: 'Salesforce', quote: 'En tant qu\'expert CRM chez ShiftC, j\'allie expertise technique et valeurs humaines pour offrir des solutions de qualité, portées par un esprit d\'équipe fort avec nos clients.', body: 'Matthieu fait partie des membres fondateurs du collectif ShiftC. Il incarne ce que le projet a voulu construire dès le départ : un expert senior qui s\'implique à la fois sur les aspects techniques et humains de chaque projet.' },
-  { initial: 'R', name: 'Rodolphe', role: 'Consultant fonctionnel · 20 ans d\'expérience IT', tag: 'Salesforce · D365', quote: 'Consultant fonctionnel épanoui chez ShiftC, je valorise la confiance, la transparence du collectif et l\'esprit d\'équipe — tout en envisageant sereinement la croissance de l\'entreprise.', body: 'Avec plus de 20 ans d\'expérience dans l\'IT, Rodolphe intervient avec sérénité sur les problématiques CRM les plus complexes. Ce qui le retient chez ShiftC : la confiance que lui accorde le collectif et la liberté de se concentrer sur ce qu\'il fait le mieux.' },
-  { initial: 'J', name: 'Jimmy', role: 'Consultant CRM senior · Architecte solutions', tag: 'Salesforce', quote: 'Autonome et confiant, j\'aime la liberté d\'action chez ShiftC, et j\'envisage l\'avenir avec pragmatisme et sérénité.', body: 'Jimmy imagine la solution CRM en mesurant toujours les impacts sur la globalité du SI. Rigoureux et créatif, il apprécie par-dessus tout l\'autonomie que lui offre ShiftC — et la confiance que cela implique dans les deux sens.' },
+  { initial: 'M', name: 'Matthieu', role: 'Expert CRM Salesforce · 1er collaborateur ShiftC', tag: 'Salesforce', quote: 'En tant qu\'expert CRM chez ShiftC, j\'allie expertise technique et valeurs humaines pour offrir des solutions de qualité, portées par un esprit d\'équipe fort avec nos clients.', body: 'Matthieu fait partie des membres fondateurs du collectif ShiftC. Il incarne ce que le projet a voulu construire dès le départ : un expert senior qui s\'implique à la fois sur les aspects techniques et humains de chaque projet.' },
+  { initial: 'R', name: 'Rodolphe', role: 'Business analyst Senior - MS Dynamics & Salesforce', tag: 'Salesforce · D365', quote: 'Consultant fonctionnel épanoui chez ShiftC, je valorise la confiance, la transparence du collectif et l\'esprit d\'équipe — tout en envisageant sereinement la croissance de l\'entreprise.', body: 'Avec plus de 20 ans d\'expérience dans l\'IT, Rodolphe intervient avec sérénité sur les problématiques CRM les plus complexes. Ce qui le retient chez ShiftC : la confiance que lui accorde le collectif et la liberté de se concentrer sur ce qu\'il fait le mieux.' },
+  { initial: 'J', name: 'Jimmy', role: 'Tech lead MS Dynamics', tag: 'Salesforce', quote: 'Autonome et confiant, j\'aime la liberté d\'action chez ShiftC, et j\'envisage l\'avenir avec pragmatisme et sérénité.', body: 'Jimmy imagine la solution CRM en mesurant toujours les impacts sur la globalité du SI. Rigoureux et créatif, il apprécie par-dessus tout l\'autonomie que lui offre ShiftC — et la confiance que cela implique dans les deux sens.' },
   { initial: 'J', name: 'Jacques', role: 'Expert CRM · 9 ans dans le collectif', tag: 'Salesforce · D365', quote: 'Fort de mes 9 ans d\'expérience chez ShiftC, j\'apprécie l\'ambiance conviviale et le management transparent et humain qui caractérise notre collectif.', body: 'Jacques accompagne ses clients sur les aspects à la fois métiers et techniques de leur gestion de la relation client. Son engagement au sein de ShiftC tient en deux mots : ambiance et confiance.' },
-  { initial: 'H', name: 'Hawa', role: 'Consultante CRM Dynamics · Paris', tag: 'Dynamics 365', quote: 'Dynamique et expérimentée, j\'apporte mon expertise en CRM Dynamics à ShiftC sur Paris — sur les projets stratégiques et le développement commercial.', body: 'Passionnée et expérimentée, Hawa met à profit son expertise technique et son excellent relationnel pour intervenir sur les projets stratégiques depuis Paris.' },
+  { initial: 'H', name: 'Hawa', role: 'Experte MS Dynamics & IA - Responsable des activités à Paris', tag: 'Dynamics 365', quote: 'Dynamique et expérimentée, j\'apporte mon expertise en CRM Dynamics à ShiftC sur Paris — sur les projets stratégiques et le développement commercial.', body: 'Passionnée et expérimentée, Hawa met à profit son expertise technique et son excellent relationnel pour intervenir sur les projets stratégiques depuis Paris.' },
 ]
 
 const PROCESS = [
@@ -66,45 +66,51 @@ export default function Rejoindre() {
   return (
     <section id="equipe" className="border-t border-white/[0.08]">
       {/* Hero */}
-      <div className="px-10 pt-20 pb-12 grid grid-cols-2 gap-16 border-b border-white/[0.08]">
-        <div>
-          <div className="text-[0.67rem] uppercase tracking-[0.14em] text-sc-green font-medium mb-7">
+      <div className="px-10 py-20 border-b border-white/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             Rejoindre ShiftC
           </div>
-          <h2 className="font-serif font-light text-[2.75rem] leading-[1.1] tracking-[-0.025em]">
+          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-10">
             Un collectif d&apos;experts.<br />
             Pas une <em className="not-italic text-sc-green">ESN</em>.
           </h2>
-          <p className="text-[0.9rem] text-white/50 leading-[1.8] mt-7">
-            Chez ShiftC, vous choisissez vos missions, vous négociez votre rémunération,
-            et vous avez un droit de regard sur les personnes qui nous rejoignent.
-            La seule règle : la satisfaction de nos clients.
-          </p>
-        </div>
-        <div className="text-[0.86rem] text-white/50 leading-[1.85] pt-2 flex flex-col gap-4">
-          <p>ShiftC ne recrute pas des compétences. <strong className="text-white/80 font-medium">ShiftC recrute des personnalités.</strong> Nous cherchons des experts CRM confirmés qui partagent nos valeurs — autonomie, transparence, exigence.</p>
-          <p>Nous grandissons de manière raisonnée. <strong className="text-white/80 font-medium">Si vous cochez les cases techniques mais pas les valeurs, nous ne travaillerons pas ensemble.</strong> Si vous cochez les deux, parlons-en.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <p className="text-[1rem] text-white/50 leading-[1.8]">
+              Chez ShiftC, vous choisissez vos missions, vous négociez votre rémunération,
+              et vous avez un droit de regard sur les personnes qui nous rejoignent.{' '}
+              <strong className="text-white/80 font-medium">La seule règle : la satisfaction de nos clients.</strong>
+            </p>
+            <div className="text-[1rem] text-white/50 leading-[1.8]">
+              <p>ShiftC ne recrute pas des compétences. <strong className="text-white/80 font-medium">ShiftC recrute des personnalités.</strong> Nous cherchons des experts CRM confirmés qui partagent nos valeurs — autonomie, transparence, exigence.</p>
+              <p className="mt-4">Nous grandissons de manière raisonnée. <strong className="text-white/80 font-medium">Si vous cochez les cases techniques mais pas les valeurs, nous ne travaillerons pas ensemble.</strong> Si vous cochez les deux, parlons-en.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Valeurs */}
-      <div className="px-10 py-14 border-b border-white/[0.08]">
-        <div className="text-[0.67rem] uppercase tracking-[0.14em] text-white/28 mb-6">Nos valeurs</div>
-        <div className="grid grid-cols-5 gap-3">
-          {VALEURS.map((v) => (
-            <div key={v.num} className="p-5 border border-white/[0.1] rounded-[10px] bg-sc-bg2 flex flex-col gap-3">
-              <div className="font-serif text-[0.75rem] font-bold text-[#6edea0]/35">{v.num}</div>
-              <div className="text-[0.9rem] font-semibold text-sc-text leading-[1.3]">{v.title}</div>
-              <div className="text-[0.76rem] text-white/42 leading-[1.65]">{v.desc}</div>
-            </div>
-          ))}
+      <div className="px-10 py-16 border-b border-white/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">Nos valeurs</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {VALEURS.map((v) => (
+              <div key={v.num} className="group rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-7 flex flex-col gap-3 transition-all duration-300 hover:border-sc-green/25 hover:bg-white/[0.035]">
+                <div className="font-serif text-[0.8rem] font-bold text-sc-green/40">{v.num}</div>
+                <div className="text-[0.95rem] font-semibold text-white/80 leading-[1.3]">{v.title}</div>
+                <div className="text-[0.85rem] text-white/50 leading-[1.7]">{v.desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Témoignages carousel */}
       <div className="border-b border-white/[0.08]">
-        <div className="px-10 pt-14 pb-0">
-          <div className="text-[0.67rem] uppercase tracking-[0.14em] text-white/28 mb-0">Ce que disent les Shifteurs</div>
+        <div className="px-10 pt-16 pb-0">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-0">Ce que disent les Shifteurs</div>
+          </div>
         </div>
         <div className="overflow-hidden">
           <div
@@ -151,29 +157,16 @@ export default function Rejoindre() {
         </div>
       </div>
 
-      {/* Process */}
-      <div className="px-10 py-14 border-b border-white/[0.08]">
-        <div className="text-[0.67rem] uppercase tracking-[0.14em] text-white/28 mb-6">Le processus de recrutement</div>
-        <div className="grid grid-cols-3 gap-px bg-white/[0.06] rounded-[10px] overflow-hidden">
-          {PROCESS.map((p) => (
-            <div key={p.num} className="bg-sc-bg2 p-8">
-              <div className="font-serif text-[2rem] font-bold text-[#6edea0]/20 leading-none mb-3">{p.num}</div>
-              <div className="text-[0.95rem] font-semibold text-sc-text mb-3 leading-[1.3]">{p.title}</div>
-              <div className="text-[0.8rem] text-white/45 leading-[1.75]">{p.desc}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Formulaire */}
-      <div className="px-10 py-14 grid grid-cols-2 gap-16 border-b border-white/[0.08]">
+      <div className="px-10 py-16 border-b border-white/[0.08]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
         <div>
-          <div className="text-[0.67rem] uppercase tracking-[0.14em] text-white/28 mb-4">Candidature</div>
-          <h3 className="font-serif font-light text-[1.8rem] leading-[1.2] tracking-[-0.02em]">
+          <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">Candidature</div>
+          <h3 className="font-serif font-light text-[1.9rem] leading-[1.2] tracking-[-0.02em] mb-6">
             Vous vous reconnaissez<br />dans tout ça ?<br />
             <em className="not-italic text-sc-green">Écrivez-nous.</em>
           </h3>
-          <p className="text-[0.85rem] text-white/45 leading-[1.8] mt-4">
+          <p className="text-[1rem] text-white/50 leading-[1.8]">
             Pas d&apos;offre d&apos;emploi ouverte en permanence — nous recrutons au rythme
             des belles rencontres. Si votre profil et vos valeurs correspondent,
             on trouvera un contexte pour collaborer.
@@ -228,23 +221,8 @@ export default function Rejoindre() {
           </form>
         )}
       </div>
-
-      {/* FAQ */}
-      <div className="px-10 py-12">
-        <div className="text-[0.67rem] uppercase tracking-[0.14em] text-white/28 mb-6">Questions fréquentes</div>
-        {FAQ.map((f, i) => (
-          <div key={i} className="border-b border-white/[0.08]">
-            <button className="w-full flex items-center justify-between gap-4 py-5 text-left"
-              onClick={() => setFaqOpen(faqOpen === i ? null : i)}>
-              <span className="text-[0.88rem] font-medium text-white/70 hover:text-white/90 transition-colors">{f.q}</span>
-              <div className={`w-6 h-6 rounded-full border border-white/20 flex items-center justify-center text-sm flex-shrink-0 transition-all ${faqOpen === i ? 'bg-sc-green border-sc-green text-sc-bg rotate-45' : 'text-white/40'}`}>+</div>
-            </button>
-            {faqOpen === i && (
-              <p className="text-[0.83rem] text-white/45 leading-[1.8] pb-5">{f.a}</p>
-            )}
-          </div>
-        ))}
       </div>
+
     </section>
   )
 }

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" fill="none">
+  <rect width="600" height="280" fill="#0a1a10"/>
+  <defs>
+    <linearGradient id="cg1" x1="0" y1="140" x2="600" y2="140">
+      <stop offset="0%" stop-color="#6edea0" stop-opacity="0.04"/>
+      <stop offset="50%" stop-color="#6edea0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#6edea0" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="280" fill="url(#cg1)"/>
+  <!-- Globe / international network -->
+  <circle cx="300" cy="140" r="90" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1.5" fill="none"/>
+  <ellipse cx="300" cy="140" rx="50" ry="90" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1" fill="none"/>
+  <ellipse cx="300" cy="140" rx="90" ry="35" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1" fill="none"/>
+  <!-- Latitude lines -->
+  <ellipse cx="300" cy="100" rx="82" ry="20" stroke="#6edea0" stroke-opacity="0.06" stroke-width="1" fill="none"/>
+  <ellipse cx="300" cy="180" rx="82" ry="20" stroke="#6edea0" stroke-opacity="0.06" stroke-width="1" fill="none"/>
+  <!-- Copilot sparkle at center -->
+  <circle cx="300" cy="140" r="16" fill="#6edea0" fill-opacity="0.1" stroke="#6edea0" stroke-opacity="0.35" stroke-width="1.5"/>
+  <path d="M300 128 L302 136 L310 138 L302 140 L300 148 L298 140 L290 138 L298 136 Z" fill="#6edea0" fill-opacity="0.45"/>
+  <!-- Connection nodes on globe -->
+  <circle cx="230" cy="110" r="6" stroke="#6edea0" stroke-opacity="0.25" stroke-width="1" fill="#6edea0" fill-opacity="0.06"/>
+  <circle cx="370" cy="105" r="5" stroke="#6edea0" stroke-opacity="0.2" stroke-width="1" fill="#6edea0" fill-opacity="0.05"/>
+  <circle cx="250" cy="175" r="5" stroke="#6edea0" stroke-opacity="0.2" stroke-width="1" fill="#6edea0" fill-opacity="0.05"/>
+  <circle cx="360" cy="170" r="6" stroke="#6edea0" stroke-opacity="0.25" stroke-width="1" fill="#6edea0" fill-opacity="0.06"/>
+  <circle cx="210" cy="145" r="4" stroke="#6edea0" stroke-opacity="0.18" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <circle cx="390" cy="140" r="4" stroke="#6edea0" stroke-opacity="0.18" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <!-- Lines from nodes to center -->
+  <line x1="236" y1="112" x2="284" y2="135" stroke="#6edea0" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="365" y1="107" x2="316" y2="135" stroke="#6edea0" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="253" y1="173" x2="287" y2="148" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="356" y1="168" x2="313" y2="148" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <!-- Small accent dots -->
+  <circle cx="230" cy="110" r="2.5" fill="#6edea0" fill-opacity="0.45"/>
+  <circle cx="370" cy="105" r="2" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="250" cy="175" r="2" fill="#6edea0" fill-opacity="0.35"/>
+  <circle cx="360" cy="170" r="2.5" fill="#6edea0" fill-opacity="0.45"/>
+  <!-- Outer orbit particles -->
+  <circle cx="130" cy="70" r="2" fill="#6edea0" fill-opacity="0.12"/>
+  <circle cx="480" cy="60" r="1.5" fill="#6edea0" fill-opacity="0.1"/>
+  <circle cx="120" cy="220" r="1.5" fill="#6edea0" fill-opacity="0.08"/>
+  <circle cx="490" cy="230" r="2" fill="#6edea0" fill-opacity="0.1"/>
+</svg>

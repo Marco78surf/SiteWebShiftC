@@ -1,40 +1,13 @@
 import Nav from '@/components/Nav'
-import Hero from '@/components/sections/Hero'
-import Stats from '@/components/sections/Stats'
-import Enjeux from '@/components/sections/Enjeux'
-import Approche from '@/components/sections/Approche'
-import Offres from '@/components/sections/Offres'
-import Realisations from '@/components/sections/Realisations'
-import APropos from '@/components/sections/APropos'
-import Rejoindre from '@/components/sections/Rejoindre'
+import Contact from '@/components/sections/Contact'
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <>
-      {/* Navigation sticky */}
       <Nav />
-
       <main>
-        {/*
-          Above the fold : nav (48px) + hero + stats (72px) = 100vh
-          Le hero prend exactement 100vh - 48px - 72px
-        */}
-        <section id="accueil" className="flex flex-col h-[calc(100vh-4rem)]">
-          <div className="flex-1 min-h-0">
-            <Hero />
-          </div>
-          <Stats />
-        </section>
-
-        {/* Sections suivantes */}
-        <Enjeux />
-        <Approche />
-        <Offres />
-        <Realisations />
-        <APropos />
-        <Rejoindre />
+        <Contact />
       </main>
-
       <footer className="border-t border-white/[0.08] px-10 py-5 flex items-center justify-between">
         <div className="text-[0.75rem] text-white/25">
           ShiftC · Nantes ·{' '}

@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const LINKS = [
-  { label: 'Parlons de vous', href: '#enjeux' },
+  { label: 'Vos enjeux', href: '#enjeux' },
   { label: 'Notre approche',  href: '#approche' },
   { label: 'Nos offres',      href: '#offres' },
   { label: 'Nos réalisations',href: '#realisations' },
+  { label: 'À propos de ShiftC', href: '#apropos' },
   { label: "Rejoindre l'équipe", href: '#equipe' },
 ]
 
@@ -21,14 +23,18 @@ export default function Nav() {
 
   const scrollTo = (href: string) => {
     const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = '/' + href
+    }
   }
 
   return (
     <nav
       className={`
         sticky top-0 z-50 flex items-center justify-between
-        px-10 h-12
+        px-10 h-16
         transition-all duration-300
         ${scrolled
           ? 'bg-[#0b1a0f]/95 backdrop-blur-sm border-b border-white/5'
@@ -36,12 +42,27 @@ export default function Nav() {
         animate-fade-down
       `}
     >
-      {/* Logo */}
+      {/* Logo image */}
       <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="font-serif font-normal tracking-[-0.03em] text-sc-text" style={{fontSize: '1.3rem'}}
+        onClick={() => {
+          if (window.location.pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          } else {
+            window.location.href = '/'
+          }
+        }}
+        className="flex items-center flex-shrink-0"
+        style={{ height: '75.6px' }}
       >
-        Shift<span className="text-sc-green italic">C</span>
+        <Image
+          src="/images/logo-shiftc.svg"
+          alt="ShiftC — Construisons votre CRM"
+          width={276}
+          height={98}
+          priority
+          className="object-contain object-left"
+          style={{ height: '75.6px', width: 'auto' }}
+        />
       </button>
 
       {/* Liens */}
@@ -50,7 +71,8 @@ export default function Nav() {
           <li key={link.href}>
             <button
               onClick={() => scrollTo(link.href)}
-              className="text-white/40 hover:text-white/90 transition-colors duration-200" style={{fontSize: '0.95rem'}}
+              style={{ fontSize: '1.00rem' }}
+              className="text-white/40 hover:text-white/90 transition-colors duration-200"
             >
               {link.label}
             </button>
@@ -59,19 +81,20 @@ export default function Nav() {
       </ul>
 
       {/* CTA */}
-      <button
-        onClick={() => scrollTo('#contact')}
-        style={{ fontSize: '0.93rem' }}
+      <a
+        href="/contact"
+        style={{ fontSize: '0.82rem' }}
         className="
           font-medium text-sc-green
           border border-[#6edea0]/50 rounded-full
           px-4 py-[0.3rem]
           hover:bg-[#6edea0]/08 hover:border-sc-green
           transition-all duration-200
+          flex-shrink-0
         "
       >
         Nous contacter
-      </button>
+      </a>
     </nav>
   )
 }

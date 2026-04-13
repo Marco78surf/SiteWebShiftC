@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ShiftC — Cabinet CRM & IA | Experts Salesforce & Dynamics 365',
+  title: 'ShiftC — CRM & IA | Experts Salesforce & Dynamics 365',
   description:
     'ShiftC est un collectif de consultants seniors spécialisés CRM et IA. Experts Salesforce et Microsoft Dynamics 365. Projets grands comptes, adoption CRM, agents IA.',
   keywords: [
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: '/icon.svg',
+  },
 }
 
 export default function RootLayout({

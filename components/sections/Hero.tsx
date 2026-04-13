@@ -5,88 +5,69 @@ import Image from 'next/image'
 export default function Hero() {
   return (
     <section
-      id="accueil"
-      className="grid grid-cols-2"
-      style={{ height: 'calc(100vh - 106px)' }}
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '58% 42%',
+        height: '100%',
+      }}
     >
       {/* Gauche — texte */}
-      <div className="flex flex-col justify-between px-12 py-11">
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '2.75rem 4rem', height: '100%', minHeight: 0 }}>
         <div>
           {/* Eyebrow */}
-          <div className="flex items-center gap-2 mb-6 animate-fade-up delay-100">
-            <span className="w-1 h-1 rounded-full bg-sc-green" />
-            <span className="text-[0.6rem] uppercase tracking-[0.16em] text-[#6edea0]/55 font-medium">
-              Cabinet CRM &amp; IA · Experts certifiés
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
+            <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#6edea0', flexShrink: 0 }} />
+            <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.16em', color: 'rgba(110,222,160,0.55)', fontWeight: 500 }}>
+              CRM &amp; IA
             </span>
           </div>
 
-          {/* Titre — agrandi */}
-          <h1
-            className="font-serif font-light leading-[1.06] tracking-[-0.03em] animate-fade-up delay-200 text-sc-text"
-            style={{ fontSize: 'clamp(2.8rem, 4.5vw, 4.5rem)' }}
-          >
-            Maîtriser<br />
-            la complexité,<br />
-            <em className="not-italic text-sc-green">simplifier</em><br />
-            les relations.
+          {/* Titre */}
+          <h1 style={{ fontFamily: 'Fraunces, serif', fontWeight: 300, lineHeight: 1.06, letterSpacing: '-0.03em', fontSize: 'clamp(2.8rem, 4.5vw, 4.5rem)', color: '#f0ede6' }}>
+            Maîtriser la complexité,<br />
+            <em style={{ fontStyle: 'normal', color: '#6edea0' }}>simplifier</em> les relations.
           </h1>
 
-          {/* Sous-titre — agrandi */}
-          <p
-            className="text-white/44 leading-[1.75] font-light animate-fade-up delay-300"
-            style={{ fontSize: '1rem', maxWidth: '340px', marginTop: '1.5rem' }}
-          >
-            Des consultants seniors en CRM, augmentés par l&apos;IA —
-            pour des projets Salesforce et Dynamics qui tiennent leurs promesses.
+          {/* Sous-titre */}
+          <p style={{ fontSize: '1rem', color: 'rgba(240,237,230,0.44)', lineHeight: 1.75, maxWidth: 420, marginTop: '1.5rem', fontWeight: 400 }}>
+            Des consultants experts en CRM, certifiés, augmentés par l&apos;IA pour des projets Salesforce et Dynamics qui tiennent leurs promesses.
           </p>
         </div>
 
         {/* CTA */}
-        <div className="animate-fade-up delay-400">
-          <div className="w-7 h-px bg-[#6edea0]/30 mb-5" />
-          <div className="flex items-center gap-4">
+        <div>
+          <div style={{ width: 28, height: 1, background: 'rgba(110,222,160,0.3)', marginBottom: '1.2rem' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="bg-sc-green text-sc-bg font-medium rounded-full hover:opacity-88 transition-opacity"
-              style={{ fontSize: '0.82rem', padding: '0.65rem 1.6rem' }}
+              href="/contact"
+              style={{ background: '#6edea0', color: '#0b1a0f', fontSize: '0.82rem', fontWeight: 500, padding: '0.65rem 1.6rem', borderRadius: 100, textDecoration: 'none' }}
             >
               Parler de votre projet
             </a>
             <a
               href="#realisations"
-              onClick={(e) => {
-                e.preventDefault()
-                document.querySelector('#realisations')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="text-white/38 hover:text-white/70 transition-colors flex items-center gap-1 group"
-              style={{ fontSize: '0.8rem' }}
+              onClick={(e) => { e.preventDefault(); document.querySelector('#realisations')?.scrollIntoView({ behavior: 'smooth' }) }}
+              style={{ fontSize: '0.8rem', color: 'rgba(240,237,230,0.38)', textDecoration: 'none' }}
             >
-              Voir nos réalisations
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+              Voir nos réalisations →
             </a>
           </div>
         </div>
       </div>
 
-      {/* Droite — photo identique à l'original */}
-      <div className="relative overflow-hidden animate-fade-in delay-100">
+      {/* Droite — photo */}
+      <div style={{ position: 'relative', overflow: 'hidden', height: '100%' }}>
         <Image
-          src="/images/hero-delta.jpg"
-          alt="Vue aérienne d'un delta — complexité maîtrisée"
+          src="/images/hero-accueil.jpg"
+          alt="Vue aérienne d'un delta"
           fill
           priority
-          className="object-cover object-[40%_center]"
-          sizes="50vw"
+          style={{ objectFit: 'cover', objectPosition: '40% center' }}
+          sizes="42vw"
         />
-        {/* Fondu gauche */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a0f] via-[#0b1a0f]/55 to-transparent pointer-events-none" />
-        {/* Vignette bas */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-[#0b1a0f]/45 to-transparent pointer-events-none" />
-        <p className="absolute bottom-2 right-3 text-[0.5rem] uppercase tracking-[0.07em] text-white/16">
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0b1a0f, rgba(11,26,15,0.55), transparent)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '25%', background: 'linear-gradient(to top, rgba(11,26,15,0.45), transparent)', pointerEvents: 'none' }} />
+        <p style={{ position: 'absolute', bottom: 8, right: 12, fontSize: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.07em', color: 'rgba(240,237,230,0.16)' }}>
           © Manu Alesanco · Unsplash
         </p>
       </div>

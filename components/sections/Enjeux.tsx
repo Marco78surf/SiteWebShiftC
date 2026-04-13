@@ -56,24 +56,27 @@ export default function Enjeux() {
   return (
     <section id="enjeux" className="border-t border-white/[0.08]">
       {/* Hero texte */}
-      <div className="px-10 pt-20 pb-16 border-b border-white/[0.08]">
-        <div className="text-[0.67rem] uppercase tracking-[0.14em] text-sc-green font-medium mb-7">
-          Vos enjeux
+      <div className="px-10 py-20 border-b border-white/[0.08]">
+        <div className="max-w-[900px] mx-auto">
+          <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
+            Vos enjeux
+          </div>
+          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
+            Vous n&apos;êtes pas là pour gérer des <em style={{ fontStyle: 'normal', color: '#6edea0' }}>projets IT</em>.
+            Vous êtes là pour créer de la valeur.
+          </h2>
+          <p className="text-[1rem] text-white/50 leading-[1.8]">
+            Derrière chaque projet CRM, il y a une direction qui doit rendre des comptes,
+            des équipes qu&apos;il faut embarquer, et des engagements qu&apos;il faut tenir.
+            Voici les situations que nous <strong className="text-white/70 font-medium">combattons</strong>.
+          </p>
         </div>
-        <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] max-w-[640px]">
-          Vous n&apos;êtes pas là pour gérer des projets IT.<br />
-          Vous êtes là pour créer de la valeur.
-        </h2>
-        <p className="text-[0.9rem] text-white/50 leading-[1.8] max-w-[520px] mt-7">
-          Derrière chaque projet CRM, il y a une direction qui doit rendre des comptes,
-          des équipes qu&apos;il faut embarquer, et des engagements qu&apos;il faut tenir.
-          Voici les situations que nous <strong className="text-white/70 font-medium">combattons</strong>.
-        </p>
       </div>
 
       {/* Accordéon */}
       <div className="px-10">
-        {ENJEUX.map((e, i) => (
+        <div className="max-w-[900px] mx-auto">
+          {ENJEUX.map((e, i) => (
           <div key={i} className="border-b border-white/[0.08]">
             {/* Trigger */}
             <button
@@ -117,23 +120,23 @@ export default function Enjeux() {
                   {e.link}
                 </div>
               </div>
-            )}
+            )}  
           </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* CTA */}
-      <div className="px-10 py-14 flex items-center justify-between border-t border-white/[0.08]">
-        <p className="font-serif font-light text-[1.35rem] text-white/65 max-w-[420px] leading-[1.4]">
-          Vous vous reconnaissez dans l&apos;un de ces enjeux ?{' '}
-          <em className="not-italic text-sc-green">Parlons-en.</em>
-        </p>
-        <button
-          onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-          className="bg-sc-green text-sc-bg text-[0.82rem] font-medium px-6 py-[0.7rem] rounded-full hover:opacity-88 transition-opacity"
-        >
-          Prendre contact →
-        </button>
+      <div className="px-10 py-14 border-t border-white/[0.08]">
+        <div className="max-w-[900px] mx-auto flex items-center justify-between">
+          <p className="font-serif font-light text-[1.62rem] text-white/65 max-w-[420px] leading-[1.4]">Vous vous reconnaissez dans l&apos;un de ces enjeux ? <em className="not-italic text-sc-green">Parlons-en.</em></p>
+          <a
+            href="/contact"
+            className="bg-sc-green text-sc-bg text-[0.82rem] font-medium px-6 py-[0.7rem] rounded-full hover:opacity-88 transition-opacity"
+          >
+            Prendre contact →
+          </a>
+        </div>
       </div>
     </section>
   )

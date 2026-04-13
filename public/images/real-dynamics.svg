@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" fill="none">
+  <rect width="600" height="280" fill="#0a1a10"/>
+  <defs>
+    <linearGradient id="dg1" x1="0" y1="280" x2="600" y2="0">
+      <stop offset="0%" stop-color="#6edea0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#6edea0" stop-opacity="0.01"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="280" fill="url(#dg1)"/>
+  <!-- Migration arrows - old to new system -->
+  <!-- Left block (old system) -->
+  <rect x="60" y="80" width="120" height="120" rx="8" stroke="#6edea0" stroke-opacity="0.12" stroke-width="1" fill="#6edea0" fill-opacity="0.02"/>
+  <line x1="80" y1="110" x2="160" y2="110" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1"/>
+  <line x1="80" y1="130" x2="145" y2="130" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="80" y1="150" x2="155" y2="150" stroke="#6edea0" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="80" y1="170" x2="135" y2="170" stroke="#6edea0" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- Arrow flow -->
+  <path d="M200 140 L280 140" stroke="#6edea0" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <path d="M290 140 L360 140" stroke="#6edea0" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <polygon points="365,135 375,140 365,145" fill="#6edea0" fill-opacity="0.4"/>
+  <!-- Transformation symbol -->
+  <circle cx="245" cy="140" r="20" stroke="#6edea0" stroke-opacity="0.25" stroke-width="1.5" fill="#6edea0" fill-opacity="0.04"/>
+  <path d="M237 140 L253 140 M245 132 L245 148" stroke="#6edea0" stroke-opacity="0.4" stroke-width="1.5"/>
+  <!-- Right block (new system - Dynamics) -->
+  <rect x="390" y="60" width="160" height="160" rx="12" stroke="#6edea0" stroke-opacity="0.2" stroke-width="1.5" fill="#6edea0" fill-opacity="0.03"/>
+  <rect x="410" y="85" width="50" height="50" rx="6" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <rect x="475" y="85" width="50" height="50" rx="6" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <rect x="410" y="150" width="50" height="50" rx="6" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <rect x="475" y="150" width="50" height="50" rx="6" stroke="#6edea0" stroke-opacity="0.15" stroke-width="1" fill="#6edea0" fill-opacity="0.04"/>
+  <!-- Accent dots -->
+  <circle cx="435" cy="110" r="3" fill="#6edea0" fill-opacity="0.5"/>
+  <circle cx="500" cy="110" r="3" fill="#6edea0" fill-opacity="0.4"/>
+  <circle cx="435" cy="175" r="3" fill="#6edea0" fill-opacity="0.35"/>
+  <circle cx="500" cy="175" r="3" fill="#6edea0" fill-opacity="0.45"/>
+</svg>

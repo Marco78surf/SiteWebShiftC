@@ -38,32 +38,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="border-t border-white/[0.08]">
-      {/* Aiguillage */}
-      <div className="grid grid-cols-2 gap-px bg-white/[0.06]">
-        {(['prospect', 'candidat'] as const).map((m) => (
-          <button key={m} onClick={() => { setMode(m); setSubmitted(false) }}
-            className={`flex flex-col gap-4 px-10 py-10 text-left transition-colors ${mode === m ? 'bg-sc-bg3' : 'bg-sc-bg hover:bg-sc-bg2'}`}>
-            <div className={`w-9 h-1 rounded-full transition-colors ${mode === m ? 'bg-sc-green' : 'bg-white/15'}`} />
-            <div className="text-[0.65rem] uppercase tracking-[0.12em] text-white/28">
-              {m === 'prospect' ? 'Entreprise' : 'Consultant expert'}
-            </div>
-            <div className="font-serif font-light text-[1.6rem] leading-[1.2] tracking-[-0.02em] text-sc-text">
-              {m === 'prospect'
-                ? <>Vous avez un projet <em className="not-italic text-sc-green">CRM</em>.</>
-                : <>Vous voulez <em className="not-italic text-sc-green">nous rejoindre</em>.</>}
-            </div>
-            <div className="text-[0.84rem] text-white/45 leading-[1.75] max-w-[380px]">
-              {m === 'prospect'
-                ? 'Salesforce, Dynamics 365, Agent IA, adoption, run — vous cherchez un partenaire senior pour un projet ou une mission spécifique.'
-                : 'Expert CRM Salesforce ou Dynamics, vous cherchez un collectif qui vous ressemble — autonomie, séniorité, valeurs fortes.'}
-            </div>
-            <div className="text-[0.8rem] font-medium text-sc-green">
-              {m === 'prospect' ? 'Parler de votre projet →' : 'Voir la page recrutement →'}
-            </div>
-          </button>
-        ))}
-      </div>
-
       {/* Zone principale */}
       <div className="grid grid-cols-2 min-h-[500px]">
         {/* Gauche — infos */}
@@ -122,12 +96,12 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
-              <button
-                onClick={() => document.querySelector('#equipe')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-sc-green text-sc-bg text-[0.84rem] font-semibold px-8 py-4 rounded-full w-fit hover:opacity-88 transition-opacity"
+              <a
+                href="/#equipe"
+                className="bg-sc-green text-sc-bg text-[0.84rem] font-semibold px-8 py-4 rounded-full w-fit hover:opacity-88 transition-opacity inline-block text-center no-underline"
               >
                 Voir la page Rejoindre ShiftC →
-              </button>
+              </a>
             </div>
           ) : submitted ? (
             <div className="flex items-center justify-center h-full">
@@ -189,19 +163,6 @@ export default function Contact() {
               </button>
             </form>
           )}
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="border-t border-white/[0.05] px-10 py-5 flex items-center justify-between">
-        <div className="text-[0.75rem] text-white/25">
-          ShiftC · Nantes · contact@shiftc.fr ·{' '}
-          <span className="text-[#6edea0]/45 cursor-pointer hover:text-sc-green transition-colors">Mentions légales</span>
-          {' '}·{' '}
-          <span className="text-[#6edea0]/45 cursor-pointer hover:text-sc-green transition-colors">Politique de confidentialité</span>
-        </div>
-        <div className="text-[0.78rem] text-white/40 border border-white/12 px-4 py-1.5 rounded-md cursor-pointer hover:border-sc-green hover:text-sc-green transition-all">
-          Suivre ShiftC sur <span className="text-sc-green">LinkedIn →</span>
         </div>
       </div>
     </section>
