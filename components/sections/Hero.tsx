@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 
 export default function Hero() {
@@ -12,23 +13,29 @@ export default function Hero() {
       <div className="flex flex-col justify-between px-12 py-11">
         <div>
           {/* Eyebrow */}
-          <div className="flex items-center gap-2 mb-4 animate-fade-up delay-100">
+          <div className="flex items-center gap-2 mb-6 animate-fade-up delay-100">
             <span className="w-1 h-1 rounded-full bg-sc-green" />
             <span className="text-[0.6rem] uppercase tracking-[0.16em] text-[#6edea0]/55 font-medium">
               Cabinet CRM &amp; IA · Experts certifiés
             </span>
           </div>
 
-          {/* Titre */}
-          <h1 className="font-serif font-light text-[clamp(2.4rem,3.5vw,3.4rem)] leading-[1.06] tracking-[-0.03em] mt-0 animate-fade-up delay-200">
+          {/* Titre — agrandi */}
+          <h1
+            className="font-serif font-light leading-[1.06] tracking-[-0.03em] animate-fade-up delay-200 text-sc-text"
+            style={{ fontSize: 'clamp(2.8rem, 4.5vw, 4.5rem)' }}
+          >
             Maîtriser<br />
             la complexité,<br />
             <em className="not-italic text-sc-green">simplifier</em><br />
             les relations.
           </h1>
 
-          {/* Sous-titre */}
-          <p className="text-[0.84rem] text-white/44 leading-[1.75] max-w-[290px] mt-5 font-light animate-fade-up delay-300">
+          {/* Sous-titre — agrandi */}
+          <p
+            className="text-white/44 leading-[1.75] font-light animate-fade-up delay-300"
+            style={{ fontSize: '1rem', maxWidth: '340px', marginTop: '1.5rem' }}
+          >
             Des consultants seniors en CRM, augmentés par l&apos;IA —
             pour des projets Salesforce et Dynamics qui tiennent leurs promesses.
           </p>
@@ -44,11 +51,8 @@ export default function Hero() {
                 e.preventDefault()
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="
-                bg-sc-green text-sc-bg text-[0.76rem] font-medium
-                px-6 py-[0.58rem] rounded-full
-                hover:opacity-88 transition-opacity
-              "
+              className="bg-sc-green text-sc-bg font-medium rounded-full hover:opacity-88 transition-opacity"
+              style={{ fontSize: '0.82rem', padding: '0.65rem 1.6rem' }}
             >
               Parler de votre projet
             </a>
@@ -58,10 +62,8 @@ export default function Hero() {
                 e.preventDefault()
                 document.querySelector('#realisations')?.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="
-                text-[0.74rem] text-white/38 hover:text-white/70
-                transition-colors flex items-center gap-1 group
-              "
+              className="text-white/38 hover:text-white/70 transition-colors flex items-center gap-1 group"
+              style={{ fontSize: '0.8rem' }}
             >
               Voir nos réalisations
               <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -70,7 +72,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Droite — photo */}
+      {/* Droite — photo identique à l'original */}
       <div className="relative overflow-hidden animate-fade-in delay-100">
         <Image
           src="/images/hero-delta.jpg"

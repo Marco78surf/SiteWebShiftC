@@ -39,7 +39,7 @@ export default function Nav() {
       {/* Logo */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="font-serif font-normal text-[1.1rem] tracking-[-0.03em] text-sc-text"
+        className="font-serif font-normal tracking-[-0.03em] text-sc-text" style={{fontSize: '1.3rem'}}
       >
         Shift<span className="text-sc-green italic">C</span>
       </button>
@@ -50,7 +50,7 @@ export default function Nav() {
           <li key={link.href}>
             <button
               onClick={() => scrollTo(link.href)}
-              className="text-[0.73rem] text-white/40 hover:text-white/90 transition-colors duration-200"
+              className="text-white/40 hover:text-white/90 transition-colors duration-200" style={{fontSize: '0.95rem'}}
             >
               {link.label}
             </button>
@@ -61,8 +61,9 @@ export default function Nav() {
       {/* CTA */}
       <button
         onClick={() => scrollTo('#contact')}
+        style={{ fontSize: '0.93rem' }}
         className="
-          text-[0.71rem] font-medium text-sc-green
+          font-medium text-sc-green
           border border-[#6edea0]/50 rounded-full
           px-4 py-[0.3rem]
           hover:bg-[#6edea0]/08 hover:border-sc-green
