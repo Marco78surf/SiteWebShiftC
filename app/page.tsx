@@ -7,6 +7,9 @@ import Offres from '@/components/sections/Offres'
 import Realisations from '@/components/sections/Realisations'
 import APropos from '@/components/sections/APropos'
 import Rejoindre from '@/components/sections/Rejoindre'
+import SectionDivider from '@/components/SectionDivider'
+import RiverBackdrop from '@/components/RiverBackdrop'
+import DynamicSectionStage from '@/components/DynamicSectionStage'
 
 export default function Home() {
   return (
@@ -27,12 +30,38 @@ export default function Home() {
         </section>
 
         {/* Sections suivantes */}
-        <Enjeux />
-        <Approche />
-        <Offres />
-        <Realisations />
-        <APropos />
-        <Rejoindre />
+        <div className="river-journey">
+          <RiverBackdrop />
+
+          <DynamicSectionStage section="Vos enjeux" index="01" mark="E" toneClass="section-stage--alpha">
+            <Enjeux />
+          </DynamicSectionStage>
+          <SectionDivider />
+
+          <DynamicSectionStage section="Notre approche" index="02" mark="A" toneClass="section-stage--beta">
+            <Approche />
+          </DynamicSectionStage>
+          <SectionDivider />
+
+          <DynamicSectionStage section="Nos offres" index="03" mark="O" toneClass="section-stage--gamma">
+            <Offres />
+          </DynamicSectionStage>
+          <SectionDivider />
+
+          <DynamicSectionStage section="Nos réalisations" index="04" mark="R" toneClass="section-stage--alpha">
+            <Realisations />
+          </DynamicSectionStage>
+          <SectionDivider />
+
+          <DynamicSectionStage section="À propos" index="05" mark="P" toneClass="section-stage--beta">
+            <APropos />
+          </DynamicSectionStage>
+          <SectionDivider />
+
+          <DynamicSectionStage section="Rejoindre ShiftC" index="06" mark="J" toneClass="section-stage--gamma">
+            <Rejoindre />
+          </DynamicSectionStage>
+        </div>
       </main>
 
       <footer className="border-t border-white/[0.08] px-10 py-5 flex items-center justify-between">
