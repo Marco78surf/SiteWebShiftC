@@ -158,7 +158,7 @@ export default function Rejoindre() {
       </div>
 
       {/* Formulaire */}
-      <div className="px-10 py-16 border-b border-white/[0.08]">
+      <div id="candidature" className="px-10 py-16 border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
         <div>
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">Candidature</div>

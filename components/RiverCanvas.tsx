@@ -32,6 +32,7 @@ export default function RiverCanvas() {
     let scrollY = 0
     let vw = 0
     let vh = 0
+    let convergenceX = 0
     let convergenceY = 0
 
     /* particles ------------------------------------------------- */
@@ -44,13 +45,15 @@ export default function RiverCanvas() {
 
     /* helpers --------------------------------------------------- */
     function updateConvergence() {
-      const el =
-        document.getElementById('equipe') ??
-        document.querySelector('footer')
-      if (el) {
-        const r = el.getBoundingClientRect()
+      const cand = document.getElementById('candidature')
+      const section = document.getElementById('equipe')
+      const target = cand ?? section ?? document.querySelector('footer')
+      if (target) {
+        const r = target.getBoundingClientRect()
+        convergenceX = r.left + r.width * 0.5
         convergenceY = r.top + window.scrollY + r.height * 0.5
       } else {
+        convergenceX = vw * 0.5
         convergenceY = document.documentElement.scrollHeight
       }
     }
@@ -81,7 +84,7 @@ export default function RiverCanvas() {
     function getAnchors(idx: number, time: number) {
       const seed = idx * 1.618 + 0.414
       const sx = BRANCH_X[idx] * vw
-      const ex = vw * 0.5
+      const ex = convergenceX
       return ANCHOR_T.map((frac, i) => ({
         x: sx + (ex - sx) * frac + osc(time, seed, i, i),
         y: frac * convergenceY,
@@ -100,7 +103,7 @@ export default function RiverCanvas() {
       const central = idx === 4
 
       const grad = ctx.createLinearGradient(0, 0, 0, convergenceY)
-      grad.addColorStop(0, 'rgba(10,38,15,0.65)')
+      grad.addColorStop(0, 'rgba(10,38,15,0.94)')
       grad.addColorStop(1, 'rgba(62,178,78,1)')
 
       ctx.beginPath()
@@ -121,10 +124,10 @@ export default function RiverCanvas() {
       ctx.strokeStyle = grad
       ctx.lineCap = 'round'
       ctx.lineJoin = 'round'
-      ctx.lineWidth = central ? 1.4 : 0.7 + (1 - d) * 0.45
-      ctx.globalAlpha = central ? 0.92 : 0.3 + (1 - d) * 0.38
+      ctx.lineWidth = central ? 2.0 : 1.0 + (1 - d) * 0.65
+      ctx.globalAlpha = central ? 1 : 0.46 + (1 - d) * 0.50
       if (central) {
-        ctx.shadowBlur = 9
+        ctx.shadowBlur = 15
         ctx.shadowColor = '#6edea0'
       }
       ctx.stroke()
@@ -163,32 +166,66 @@ export default function RiverCanvas() {
         const pos = posOnBranch(idx, p.t, time)
         const a = Math.sin(p.t * Math.PI)
         ctx.beginPath()
-        ctx.arc(pos.x, pos.y, 1.5, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(110,222,160,${(a * 0.7).toFixed(3)})`
+        ctx.arc(pos.x, pos.y, 2.2, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(110,222,160,${(a * 1.0).toFixed(3)})`
         ctx.fill()
       }
     }
 
     /* convergence glow ------------------------------------------ */
     function drawConvergence(time: number) {
-      const cx = vw * 0.5
+      const cx = convergenceX
       const cy = convergenceY
-      const r = 3 + Math.sin(time * 1.4) * 2
+      const r = 5 + Math.sin(time * 1.4) * 3
 
-      const hg = ctx.createRadialGradient(cx, cy, 0, cx, cy, 22)
-      hg.addColorStop(0, 'rgba(60,180,75,0.18)')
-      hg.addColorStop(1, 'rgba(60,180,75,0)')
+      // wide ambient halo
+      const hg0 = ctx.createRadialGradient(cx, cy, 0, cx, cy, 110)
+      hg0.addColorStop(0, 'rgba(110,222,160,0.22)')
+      hg0.addColorStop(0.4, 'rgba(60,180,75,0.08)')
+      hg0.addColorStop(1, 'rgba(60,180,75,0)')
       ctx.beginPath()
-      ctx.arc(cx, cy, 22, 0, Math.PI * 2)
-      ctx.fillStyle = hg
+      ctx.arc(cx, cy, 110, 0, Math.PI * 2)
+      ctx.fillStyle = hg0
       ctx.fill()
 
+      // outer halo
+      const hg1 = ctx.createRadialGradient(cx, cy, 0, cx, cy, 60)
+      hg1.addColorStop(0, 'rgba(110,222,160,0.55)')
+      hg1.addColorStop(0.5, 'rgba(60,180,75,0.2)')
+      hg1.addColorStop(1, 'rgba(60,180,75,0)')
+      ctx.beginPath()
+      ctx.arc(cx, cy, 60, 0, Math.PI * 2)
+      ctx.fillStyle = hg1
+      ctx.fill()
+
+      // mid glow
+      const hg2 = ctx.createRadialGradient(cx, cy, 0, cx, cy, 30)
+      hg2.addColorStop(0, 'rgba(110,222,160,0.8)')
+      hg2.addColorStop(1, 'rgba(110,222,160,0)')
+      ctx.beginPath()
+      ctx.arc(cx, cy, 30, 0, Math.PI * 2)
+      ctx.fillStyle = hg2
+      ctx.fill()
+
+      // bright core with heavy bloom
       ctx.beginPath()
       ctx.arc(cx, cy, r, 0, Math.PI * 2)
-      ctx.fillStyle = '#6edea0'
-      ctx.globalAlpha = 0.85
+      ctx.fillStyle = '#b8fad8'
+      ctx.shadowBlur = 45
+      ctx.shadowColor = '#6edea0'
       ctx.fill()
-      ctx.globalAlpha = 1
+      // double-pass bloom
+      ctx.fill()
+      ctx.shadowBlur = 0
+
+      // white hot center
+      ctx.beginPath()
+      ctx.arc(cx, cy, r * 0.5, 0, Math.PI * 2)
+      ctx.fillStyle = 'rgba(255,255,255,0.95)'
+      ctx.shadowBlur = 18
+      ctx.shadowColor = '#ffffff'
+      ctx.fill()
+      ctx.shadowBlur = 0
     }
 
     /* main loop ------------------------------------------------- */
@@ -232,7 +269,7 @@ export default function RiverCanvas() {
         left: 0,
         width: '100vw',
         height: '100vh',
-        zIndex: 1,
+        zIndex: 3,
         pointerEvents: 'none',
       }}
       aria-hidden="true"
