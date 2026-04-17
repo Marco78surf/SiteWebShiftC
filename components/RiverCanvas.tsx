@@ -105,8 +105,8 @@ export default function RiverCanvas() {
       const central = idx === 4
 
       const grad = ctx.createLinearGradient(0, 0, 0, convergenceY)
-      grad.addColorStop(0, 'rgba(10,38,15,0.94)')
-      grad.addColorStop(1, 'rgba(62,178,78,1)')
+      grad.addColorStop(0, 'rgba(10,38,15,0.60)')
+      grad.addColorStop(1, 'rgba(62,178,78,0.64)')
 
       ctx.beginPath()
       ctx.moveTo(pts[0].x, pts[0].y)
@@ -126,10 +126,10 @@ export default function RiverCanvas() {
       ctx.strokeStyle = grad
       ctx.lineCap = 'round'
       ctx.lineJoin = 'round'
-      ctx.lineWidth = central ? 2.0 : 1.0 + (1 - d) * 0.65
-      ctx.globalAlpha = central ? 1 : 0.46 + (1 - d) * 0.50
+      ctx.lineWidth = central ? 1.3 : 0.64 + (1 - d) * 0.42
+      ctx.globalAlpha = central ? 0.64 : 0.30 + (1 - d) * 0.32
       if (central) {
-        ctx.shadowBlur = 15
+        ctx.shadowBlur = 10
         ctx.shadowColor = '#6edea0'
       }
       ctx.stroke()
@@ -168,8 +168,8 @@ export default function RiverCanvas() {
         const pos = posOnBranch(idx, p.t, time)
         const a = Math.sin(p.t * Math.PI)
         ctx.beginPath()
-        ctx.arc(pos.x, pos.y, 2.2, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(110,222,160,${(a * 1.0).toFixed(3)})`
+        ctx.arc(pos.x, pos.y, 1.4, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(110,222,160,${(a * 0.64).toFixed(3)})`
         ctx.fill()
       }
     }
