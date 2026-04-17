@@ -23,10 +23,11 @@ export default function RiverCanvas() {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    const canvas = ref.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
+    const cvs = ref.current
+    if (!cvs) return
+    const ctx = cvs.getContext('2d')
     if (!ctx) return
+    const canvas = cvs as HTMLCanvasElement
 
     let animId = 0
     let scrollY = 0
