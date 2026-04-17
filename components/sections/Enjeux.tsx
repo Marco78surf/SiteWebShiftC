@@ -56,13 +56,13 @@ export default function Enjeux() {
   return (
     <section id="enjeux" className="border-t border-white/[0.08]">
       {/* Hero texte */}
-      <div className="px-10 py-20 border-b border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-20 border-b border-white/[0.08]">
         <div className="max-w-[900px] mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             Vos enjeux
           </div>
-          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
-            Vous n&apos;êtes pas là pour gérer des <em style={{ fontStyle: 'normal', color: '#6edea0' }}>projets IT</em>.
+          <h2 className="font-serif font-light text-[1.8rem] sm:text-[2.2rem] lg:text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
+            Vous n&apos;êtes pas là pour gérer des <em style={{ fontStyle: 'normal', color: '#6edea0' }}>projets IT</em>.<br />
             Vous êtes là pour créer de la valeur.
           </h2>
           <p className="text-[1rem] text-white/50 leading-[1.8]">
@@ -92,9 +92,9 @@ export default function Enjeux() {
                 </div>
               </div>
               <div className={`
-                w-7 h-7 flex-shrink-0 mt-1 rounded-full border border-white/20
-                flex items-center justify-center text-sm transition-all duration-200
-                ${open === i ? 'bg-sc-green border-sc-green text-sc-bg rotate-45' : 'text-white/40'}
+                w-7 h-7 flex-shrink-0 mt-1 rounded-full border
+                flex items-center justify-center text-sm font-bold transition-all duration-200
+                ${open === i ? 'bg-sc-green border-sc-green text-sc-bg rotate-45 shadow-[0_0_12px_rgba(110,222,160,0.6)]' : 'border-sc-green text-sc-green shadow-[0_0_8px_rgba(110,222,160,0.4)]'}
               `}>
                 +
               </div>
@@ -127,8 +127,8 @@ export default function Enjeux() {
       </div>
 
       {/* CTA */}
-      <div className="px-10 py-14 border-t border-white/[0.08]">
-        <div className="max-w-[900px] mx-auto flex items-center justify-between">
+      <div className="px-4 sm:px-6 lg:px-10 py-14 border-t border-white/[0.08]">
+        <div className="max-w-[900px] mx-auto flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-serif font-light text-[1.62rem] text-white/65 max-w-[420px] leading-[1.4]">Vous vous reconnaissez dans l&apos;un de ces enjeux ? <em className="not-italic text-sc-green">Parlons-en.</em></p>
           <a
             href="/contact"

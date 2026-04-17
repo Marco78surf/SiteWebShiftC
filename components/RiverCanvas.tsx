@@ -36,6 +36,7 @@ export default function RiverCanvas() {
     let vh = 0
     let convergenceX = 0
     let convergenceY = 0
+    let startY = 0
 
     /* particles ------------------------------------------------- */
     const particles: Particle[][] = BRANCH_X.map(() =>
@@ -47,6 +48,11 @@ export default function RiverCanvas() {
 
     /* helpers --------------------------------------------------- */
     function updateConvergence() {
+      const enjeux = document.getElementById('enjeux')
+      if (enjeux) {
+        const re = enjeux.getBoundingClientRect()
+        startY = re.top + window.scrollY
+      }
       const cand = document.getElementById('candidature')
       const section = document.getElementById('equipe')
       const target = cand ?? section ?? document.querySelector('footer')
@@ -87,9 +93,10 @@ export default function RiverCanvas() {
       const seed = idx * 1.618 + 0.414
       const sx = BRANCH_X[idx] * vw
       const ex = convergenceX
+      const totalY = convergenceY - startY
       return ANCHOR_T.map((frac, i) => ({
         x: sx + (ex - sx) * frac + osc(time, seed, i, i),
-        y: frac * convergenceY,
+        y: startY + frac * totalY,
       }))
     }
 
@@ -250,6 +257,8 @@ export default function RiverCanvas() {
     }
 
     /* boot ------------------------------------------------------ */
+    if (window.innerWidth < 768) return
+
     resize()
     animId = requestAnimationFrame(frame)
 
@@ -265,6 +274,7 @@ export default function RiverCanvas() {
   return (
     <canvas
       ref={ref}
+      className="hidden md:block"
       style={{
         position: 'fixed',
         top: 0,

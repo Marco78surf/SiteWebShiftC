@@ -15,21 +15,18 @@ const CLIENTS = [
   { name: 'Rothschild & Co', logo: '/images/logos/rothschild.svg' },
   { name: 'Ardian', logo: '/images/logos/ardian.svg' },
   { name: 'Orange Business', logo: '/images/logos/orange-business.svg' },
-  { name: 'CGI France', logo: '/images/logos/cgi.svg' },
-  { name: 'Groupe Astek', logo: '/images/logos/astek.svg' },
-  { name: 'Javista', logo: '/images/logos/javista.svg' },
 ]
 
 export default function Realisations() {
   return (
     <section id="realisations" className="border-t border-white/[0.08]">
       {/* Header */}
-      <div className="px-10 py-20 border-b border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-20 border-b border-white/[0.08]">
         <div className="max-w-[900px] mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             Nos réalisations
           </div>
-          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
+          <h2 className="font-serif font-light text-[1.8rem] sm:text-[2.2rem] lg:text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
             Des projets livrés. Des équipes <em className="not-italic text-sc-green">convaincues</em>.
           </h2>
           <p className="text-[1rem] text-white/50 leading-[1.8] max-w-[720px]">
@@ -40,7 +37,7 @@ export default function Realisations() {
       </div>
 
       {/* Grille 3×2 */}
-      <div className="px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="px-4 sm:px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {REALISATIONS.map((r, i) => (
           <div
             key={i}
@@ -71,7 +68,7 @@ export default function Realisations() {
       </div>
 
       {/* Carousel clients */}
-      <div className="border-t border-white/[0.08] px-10 py-10">
+      <div className="border-t border-white/[0.08] px-4 sm:px-6 lg:px-10 py-10">
         <div className="text-[0.8rem] uppercase tracking-[0.14em] text-white/28 text-center mb-8">
           Ils nous font confiance
         </div>
@@ -99,7 +96,7 @@ export default function Realisations() {
       </div>
 
       {/* CTA */}
-      <div className="px-10 py-14 border-t border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-14 border-t border-white/[0.08]">
         <div className="max-w-[900px] mx-auto flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-serif font-light text-[1.35rem] text-white/65 max-w-[520px] leading-[1.4]">
             Un projet similaire ?{' '}

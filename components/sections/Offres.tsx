@@ -85,13 +85,13 @@ export default function Offres() {
   return (
     <section id="offres" className="border-t border-white/[0.08]">
       {/* Header */}
-      <div className="px-10 py-20 group overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-8 shadow-[0_28px_80px_rgba(0,0,0,0.24)] transition-all duration-300 hover:border-sc-green/25 hover:bg-white/[0.04]">
+      <div className="px-4 sm:px-6 lg:px-10 py-20 group overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-8 shadow-[0_28px_80px_rgba(0,0,0,0.24)] transition-all duration-300 hover:border-sc-green/25 hover:bg-white/[0.04]">
         <div className="max-w-[900px] mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             Nos offres
           </div>
-          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
-            Cinq offres. Un seul principe :{' '}
+          <h2 className="font-serif font-light text-[1.8rem] sm:text-[2.2rem] lg:text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
+            Cinq offres. Un seul principe :<br />
             <em className="not-italic text-sc-green">des experts seniors</em>, de bout en bout.
           </h2>
           <p className="text-[1rem] text-white/50 leading-[1.8] max-w-[720px]">
@@ -101,7 +101,7 @@ export default function Offres() {
       </div>
 
       {/* Grille offres */}
-      <div className="px-10 py-16">
+      <div className="px-4 sm:px-6 lg:px-10 py-16">
         <div className="mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {OFFRES.map((o, i) => (
@@ -196,7 +196,7 @@ export default function Offres() {
       </div>
 
       {/* CTA */}
-      <div className="px-10 py-14 border-t border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-14 border-t border-white/[0.08]">
         <div className="max-w-[900px] mx-auto flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-serif font-light text-[1.35rem] text-white/65 max-w-[520px] leading-[1.4]">
             Pas sûr de quelle offre correspond à votre situation ?{' '}

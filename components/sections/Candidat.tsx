@@ -2,10 +2,16 @@
 
 import { useState, useRef } from 'react'
 
-export default function Contact() {
-  const [captcha, setCaptcha] = useState(false)
+const PROCESS = [
+  { num: '01', title: 'Cadrer la collaboration', desc: 'On échange sur vos aspirations, l\'adéquation de votre projet professionnel avec ShiftC, et votre adhésion à nos valeurs. Les compétences techniques ne suffisent pas — la personnalité compte autant.' },
+  { num: '02', title: 'Validation avec l\'équipe', desc: 'Un ou plusieurs consultants ShiftC échangent avec vous pour valider votre expertise CRM. C\'est aussi l\'occasion de prendre le pouls du collectif — et pour l\'équipe d\'exercer son droit de regard.' },
+  { num: '03', title: 'Journée « Vis ma vie »', desc: 'Une journée au sein de ShiftC pour finaliser les modalités de la collaboration — dans un esprit d\'immersion, pas d\'entretien. Vous découvrez le quotidien du collectif de l\'intérieur.' },
+]
+
+export default function Candidat() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [captcha, setCaptcha] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
   const inputClass = 'w-full bg-sc-bg2 border border-white/12 rounded-md px-4 py-3 text-[0.84rem] text-sc-text placeholder:text-white/18 focus:outline-none focus:border-sc-green transition-colors'
@@ -17,15 +23,13 @@ export default function Contact() {
     const data = new FormData(form)
     setLoading(true)
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/candidature', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           prenom: data.get('prenom'),
           nom: data.get('nom'),
           email: data.get('email'),
-          entreprise: data.get('entreprise'),
-          sujet: data.get('sujet'),
           message: data.get('message'),
         }),
       })
@@ -41,30 +45,49 @@ export default function Contact() {
       <div className="px-4 sm:px-6 lg:px-10 py-20 overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-8 shadow-[0_28px_80px_rgba(0,0,0,0.24)] transition-all duration-300 hover:border-sc-green/25 hover:bg-white/[0.04]">
         <div className="max-w-[900px] mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
-            Contact
+            Rejoindre ShiftC
           </div>
           <h2 className="font-serif font-light text-[1.8rem] sm:text-[2.2rem] lg:text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
-            Vous vous retrouvez dans notre approche,<br />
-            <span className="not-italic text-sc-green">laissez nous un message</span>
+            Vous vous reconnaissez dans tout ça ?
+            <em className="not-italic text-sc-green"> Écrivez-nous.</em>
           </h2>
           <p className="text-[1rem] text-white/50 leading-[1.8] max-w-[720px]">
-            Partagez-nous votre besoin, votre contexte ou vos ambitions : un expert senior vous recontacte sous 48h pour échanger en toute simplicité.
+            Pas d&apos;offre d&apos;emploi ouverte en permanence — nous recrutons au rythme
+            des belles rencontres. Si votre profil et vos valeurs correspondent,
+            on trouvera un contexte pour collaborer.
           </p>
         </div>
       </div>
 
+      {/* Processus */}
+      <div className="px-4 sm:px-6 lg:px-10 py-16 border-b border-white/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">Notre processus</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {PROCESS.map((p) => (
+              <div key={p.num} className="rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-7 flex flex-col gap-3">
+                <div className="font-serif text-[0.8rem] font-bold text-sc-green/40">{p.num}</div>
+                <div className="text-[0.95rem] font-semibold text-white/80 leading-[1.3]">{p.title}</div>
+                <div className="text-[0.85rem] text-white/50 leading-[1.7]">{p.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Formulaire */}
       <div className="px-4 sm:px-6 lg:px-10 py-16 border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           <div>
-            <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">Contact</div>
+            <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">Candidature</div>
             <h3 className="font-serif font-light text-[1.9rem] leading-[1.2] tracking-[-0.02em] mb-6">
-              Parlez-nous de votre besoin.
+              Parlez-nous de vous.
             </h3>
             <p className="text-[1rem] text-white/50 leading-[1.8]">
-              Votre projet, votre contexte, vos attentes, vos coordonnées.
+              Votre parcours, ce qui vous attire chez ShiftC, vos disponibilités.
+              Un expert du collectif vous répondra rapidement.
             </p>
+
             {/* Coordonnées */}
             <div className="flex flex-col gap-5 mt-10">
               <div className="flex items-start gap-3">
@@ -92,8 +115,8 @@ export default function Contact() {
             <div className="flex items-center justify-center">
               <div className="text-center">
                 <div className="text-sc-green text-3xl mb-4">✓</div>
-                <p className="font-serif font-light text-[1.2rem] text-sc-text">Message envoyé.</p>
-                <p className="text-[0.85rem] text-white/45 mt-2">Un expert vous répondra sous 48h.</p>
+                <p className="font-serif font-light text-[1.2rem] text-sc-text">Candidature envoyée.</p>
+                <p className="text-[0.85rem] text-white/45 mt-2">Nous reviendrons vers vous rapidement.</p>
               </div>
             </div>
           ) : (
@@ -108,31 +131,13 @@ export default function Contact() {
                   <input name="nom" required placeholder="Votre nom" className={inputClass} />
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Email pro</label>
-                  <input name="email" type="email" required placeholder="vous@entreprise.com" className={inputClass} />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Entreprise</label>
-                  <input name="entreprise" placeholder="Votre entreprise" className={inputClass} />
-                </div>
-              </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Sujet</label>
-                <select name="sujet" className={inputClass + ' appearance-none cursor-pointer'}>
-                  <option value="">Quel est votre besoin ?</option>
-                  <option>Projet Salesforce</option>
-                  <option>Projet Dynamics 365</option>
-                  <option>Agent IA CRM</option>
-                  <option>Run & Évolution</option>
-                  <option>CRM Adoption</option>
-                  <option>Autre demande</option>
-                </select>
+                <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Email</label>
+                <input name="email" type="email" required placeholder="votre@email.com" className={inputClass} />
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Message</label>
-                <textarea name="message" required rows={4} placeholder="Décrivez votre projet — contexte, périmètre, timing envisagé..." className={inputClass + ' resize-none'} />
+                <textarea name="message" required rows={4} placeholder="Parlez-nous de vous — votre parcours, ce qui vous attire chez ShiftC, vos disponibilités..." className={inputClass + ' resize-none'} />
               </div>
               <button type="button" onClick={() => setCaptcha(!captcha)}
                 className="flex items-center gap-3 bg-sc-bg2 border border-white/10 rounded-md px-4 py-3 cursor-pointer">
@@ -144,7 +149,7 @@ export default function Contact() {
               </button>
               <button type="submit" disabled={loading}
                 className="bg-sc-green text-sc-bg text-[0.84rem] font-semibold py-4 rounded-full hover:opacity-88 transition-opacity disabled:opacity-50">
-                {loading ? 'Envoi en cours...' : 'Envoyer ma demande →'}
+                {loading ? 'Envoi...' : 'Envoyer ma candidature →'}
               </button>
             </form>
           )}

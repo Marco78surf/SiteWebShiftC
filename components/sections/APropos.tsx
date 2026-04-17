@@ -11,12 +11,12 @@ export default function APropos() {
   return (
     <section id="apropos" className="border-t border-white/[0.08]">
       {/* Hero */}
-      <div className="px-10 py-20 border-b border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-20 border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             À propos de ShiftC
           </div>
-          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-10">
+          <h2 className="font-serif font-light text-[1.8rem] sm:text-[2.2rem] lg:text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-10">
             Un cabinet CRM qui ne ressemble à{' '}
             <em className="not-italic text-sc-green">aucune ESN</em>.
           </h2>
@@ -44,7 +44,7 @@ export default function APropos() {
       </div>
 
       {/* ADN */}
-      <div className="px-10 py-16 border-b border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-16 border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             Notre ADN
@@ -61,7 +61,7 @@ export default function APropos() {
       </div>
 
       {/* Quelques chiffres */}
-      <div className="px-10 py-16 border-b border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-16 border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-8">
             Quelques chiffres

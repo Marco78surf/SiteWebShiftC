@@ -1,12 +1,12 @@
 import Nav from '@/components/Nav'
-import Contact from '@/components/sections/Contact'
+import Candidat from '@/components/sections/Candidat'
 
-export default function ContactPage() {
+export default function CandidatPage() {
   return (
     <>
       <Nav />
       <main>
-        <Contact />
+        <Candidat />
       </main>
       <footer className="border-t border-white/[0.08] px-4 sm:px-6 lg:px-10 py-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-[0.75rem] text-white/25">

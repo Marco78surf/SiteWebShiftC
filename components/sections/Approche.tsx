@@ -26,12 +26,12 @@ export default function Approche() {
   return (
     <section id="approche" className="border-t border-white/[0.08]">
       {/* Header */}
-      <div className="px-10 py-20 border-b border-white/[0.08]">
+      <div className="px-4 sm:px-6 lg:px-10 py-20 border-b border-white/[0.08]">
         <div className="max-w-[900px] mx-auto">
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-7">
             Notre approche · Nos convictions
           </div>
-          <h2 className="font-serif font-light text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
+          <h2 className="font-serif font-light text-[1.8rem] sm:text-[2.2rem] lg:text-[2.9rem] leading-[1.1] tracking-[-0.025em] mb-8">
             Les choix qui <span className="text-sc-green">définissent</span>{' '}
             <span className="text-white">la manière dont nous travaillons</span>.
           </h2>
@@ -43,7 +43,7 @@ export default function Approche() {
       </div>
 
       {/* Convictions */}
-      <div className="px-10 py-16">
+      <div className="px-4 sm:px-6 lg:px-10 py-16">
         <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-2">
           {CONVICTIONS.map((c, i) => (
             <div
@@ -79,8 +79,8 @@ export default function Approche() {
       </div>
 
       {/* CTA bas */}
-      <div className="px-10 py-14 border-t border-white/[0.08]">
-        <div className="max-w-[900px] mx-auto flex items-center justify-between">
+      <div className="px-4 sm:px-6 lg:px-10 py-14 border-t border-white/[0.08]">
+        <div className="max-w-[900px] mx-auto flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-serif font-light text-[1.35rem] text-white/65 max-w-[440px] leading-[1.4]">Ces convictions se traduisent concrètement dans chacune de <em className="not-italic text-sc-green">nos offres</em>.</p>
           <button
             onClick={() => document.querySelector('#offres')?.scrollIntoView({ behavior: 'smooth' })}

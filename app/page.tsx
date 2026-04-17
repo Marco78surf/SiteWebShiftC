@@ -68,16 +68,16 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t border-white/[0.08] px-10 py-5 flex items-center justify-between">
+      <footer className="border-t border-white/[0.08] px-4 sm:px-6 lg:px-10 py-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-[0.75rem] text-white/25">
-          ShiftC · Nantes ·{' '}
+          ShiftC · Nantes · Rennes · Paris ·{' '}
           <a href="mailto:contact@shiftc.fr" className="hover:text-white/50 transition-colors">
             contact@shiftc.fr
           </a>
           {' · '}
-          <span className="cursor-pointer hover:text-white/50 transition-colors">Mentions légales</span>
+          <a href="/mentions-legales" className="cursor-pointer hover:text-white/50 transition-colors">Mentions légales</a>
           {' · '}
-          <span className="cursor-pointer hover:text-white/50 transition-colors">Politique de confidentialité</span>
+
         </div>
         <a
           href="https://www.linkedin.com/company/shiftc"

@@ -20,7 +20,7 @@ const STATS = [
 
 export default function Stats() {
   return (
-    <div className="grid grid-cols-3 border-t border-white/[0.07]" style={{ height: '87px' }}>
+    <div className="grid grid-cols-1 sm:grid-cols-3 border-t border-white/[0.07]" style={{ minHeight: '87px' }}>
       {STATS.map((s, i) => (
         <div
           key={i}
