@@ -8,12 +8,17 @@ import Realisations from '@/components/sections/Realisations'
 import APropos from '@/components/sections/APropos'
 import Rejoindre from '@/components/sections/Rejoindre'
 import SectionDivider from '@/components/SectionDivider'
-import RiverBackdrop from '@/components/RiverBackdrop'
 import DynamicSectionStage from '@/components/DynamicSectionStage'
+import RiverCanvas from '@/components/RiverCanvas'
+import TitleAnimator from '@/components/TitleAnimator'
 
 export default function Home() {
   return (
     <>
+      <RiverCanvas />
+      <TitleAnimator />
+
+      <div className="relative z-[2]">
       {/* Navigation sticky */}
       <Nav />
 
@@ -31,7 +36,6 @@ export default function Home() {
 
         {/* Sections suivantes */}
         <div className="river-journey">
-          <RiverBackdrop />
 
           <DynamicSectionStage section="Vos enjeux" index="01" mark="E" toneClass="section-stage--alpha">
             <Enjeux />
@@ -84,6 +88,7 @@ export default function Home() {
           Suivre ShiftC sur LinkedIn →
         </a>
       </footer>
+      </div>
     </>
   )
 }
