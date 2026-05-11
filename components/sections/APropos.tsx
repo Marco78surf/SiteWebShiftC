@@ -66,11 +66,16 @@ export default function APropos() {
           <div className="text-[0.72rem] uppercase tracking-[0.14em] text-sc-green font-semibold mb-8">
             Quelques chiffres
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             <div className="relative rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-7 overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sc-green/60 to-sc-green/0" />
               <div className="font-serif text-[2.4rem] font-bold text-sc-green leading-none mb-3">2018</div>
               <div className="text-[0.85rem] text-white/55 leading-[1.6]">Année de création</div>
+            </div>
+            <div className="relative rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-7 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sc-green/60 to-sc-green/0" />
+              <div className="font-serif text-[2.4rem] font-bold text-sc-green leading-none mb-3">30+</div>
+              <div className="text-[0.85rem] text-white/55 leading-[1.6]">Projets/missions délivrés</div>
             </div>
             <div className="relative rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-7 overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sc-green/60 to-sc-green/0" />
@@ -85,7 +90,7 @@ export default function APropos() {
             <div className="relative rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-7 overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sc-green/60 to-sc-green/0" />
               <div className="font-serif text-[2.4rem] font-bold text-sc-green leading-none mb-3">3</div>
-              <div className="text-[0.85rem] text-white/55 leading-[1.6]">Implantations — Nantes, Rennes et Paris</div>
+              <div className="text-[0.85rem] text-white/55 leading-[1.6]">Implantations : Nantes, Rennes et Paris</div>
             </div>
           </div>
         </div>

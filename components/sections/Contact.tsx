@@ -132,7 +132,7 @@ export default function Contact() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Message</label>
-                <textarea name="message" required rows={4} placeholder="Décrivez votre projet — contexte, périmètre, timing envisagé..." className={inputClass + ' resize-none'} />
+                <textarea name="message" required rows={4} placeholder="Décrivez votre projet : contexte, périmètre, timing envisagé..." className={inputClass + ' resize-none'} />
               </div>
               <button type="button" onClick={() => setCaptcha(!captcha)}
                 className="flex items-center gap-3 bg-sc-bg2 border border-white/10 rounded-md px-4 py-3 cursor-pointer">

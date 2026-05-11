@@ -6,13 +6,13 @@ const OFFRES = [ /* offers data */
   {
     num: '01', tag: 'Salesforce', badge: false,
     title: 'Projet Salesforce',
-    desc: 'Cadrage, déploiement et adoption — sans rotation d\'équipe.',
+    desc: 'Cadrage, déploiement et adoption sans rotation d\'équipe.',
     intro: 'Un projet Salesforce engage durablement votre organisation. Pourtant, la majorité des projets CRM n\'atteignent pas leurs objectifs initiaux : délais dépassés, adoption insuffisante, intégrations sous-estimées.',
-    approche: 'Chez ShiftC, la séniorité n\'est pas une option — c\'est le fondement de notre modèle. Chaque consultant est un expert confirmé de Salesforce, capable de prendre en main votre projet avec le recul que seule l\'expérience donne.',
+    approche: 'Chez ShiftC, la séniorité n\'est pas une option. C\'est le fondement de notre modèle. Chaque consultant est un expert confirmé de Salesforce, capable de prendre en main votre projet avec le recul que seule l\'expérience donne.',
     resultats: [
-      'Un projet livré dans les délais et le budget — parce que les problèmes sont anticipés',
+      'Un projet livré dans les délais et le budget parce que les problèmes sont anticipés',
       'Des équipes qui utilisent réellement le CRM dès le go-live',
-      'Un interlocuteur senior de bout en bout — pas de rotation d\'équipe',
+      'Un interlocuteur senior de bout en bout, pas de rotation d\'équipe',
       'Un time-to-value raccourci grâce à l\'IA dans le delivery',
     ],
     platforms: ['Sales Cloud', 'Service Cloud', 'Marketing Cloud', 'CPQ', 'Data Cloud', 'Agentforce'],
@@ -21,10 +21,10 @@ const OFFRES = [ /* offers data */
     num: '02', tag: 'Dynamics 365', badge: false,
     title: 'Projet Microsoft Dynamics 365',
     desc: 'Expertise D365, Power Platform et écosystème Azure.',
-    intro: 'Dynamics 365 est une plateforme puissante — mais sa richesse fonctionnelle est aussi sa complexité. Entre les modules CRM, Azure, Power Platform et Copilot, un projet mal engagé se paye cher.',
+    intro: 'Dynamics 365 est une plateforme puissante mais sa richesse fonctionnelle est aussi sa complexité. Entre les modules CRM, Azure, Power Platform et Copilot, un projet mal engagé peut coûter très cher.',
     approche: 'Nos consultants couvrent aussi bien la complexité technique que les enjeux métiers. Ils connaissent l\'intégralité de l\'écosystème Microsoft et savent d\'emblée où sont les pièges d\'architecture.',
     resultats: [
-      'Un projet livré dans les délais — les pièges Dynamics anticipés dès le cadrage',
+      'Un projet livré dans les délais. Les pièges Dynamics anticipés dès le cadrage',
       'Une intégration fluide avec votre écosystème Microsoft complet',
       'Des équipes qui utilisent réellement Dynamics dès le go-live',
       'Un time-to-value raccourci par Copilot et les LLMs',
@@ -38,7 +38,7 @@ const OFFRES = [ /* offers data */
     intro: 'L\'IA générative transforme les métiers de la vente et du service client. Mais entre la promesse des éditeurs et la valeur concrète pour vos équipes, le fossé est souvent large.',
     approche: 'Notre approche part du problème, pas de la technologie. On identifie d\'abord les cas d\'usage à fort ROI, on évalue la maturité de vos données, puis on construit une architecture agentique intégrée nativement dans vos flux.',
     resultats: [
-      'Des use cases IA sélectionnés pour leur ROI — pas pour l\'effet d\'annonce',
+      'Des use cases IA sélectionnés pour leur ROI et pas pour l\'effet d\'annonce',
       'Des agents opérationnels, intégrés nativement dans vos flux CRM',
       'Une adoption réelle par vos équipes commerciales et service client',
       'Une architecture évolutive prête à accueillir de nouveaux agents',
@@ -49,7 +49,7 @@ const OFFRES = [ /* offers data */
     num: '04', tag: 'CRM Adoption', badge: true,
     title: 'CRM Adoption',
     desc: 'Accompagnement, formation et pilotage des KPIs d\'usage.',
-    intro: 'Le taux d\'adoption est le seul indicateur qui dit la vérité sur un projet CRM. On peut livrer dans les délais, dans le budget — si les équipes n\'utilisent pas le CRM, l\'investissement ne se réalise pas.',
+    intro: 'Le taux d\'adoption est le seul indicateur qui dit la vérité sur un projet CRM. On peut livrer dans les délais, dans le budget mais si les équipes n\'utilisent pas le CRM, l\'investissement ne se réalise pas.',
     approche: 'L\'adoption se construit dans la durée, à travers un accompagnement structuré qui part des usages réels. Notre approche en 4 temps : Ancrer · Embarquer · Former · Mesurer.',
     resultats: [
       'Des équipes qui utilisent réellement le CRM dès le go-live',
@@ -63,7 +63,7 @@ const OFFRES = [ /* offers data */
     num: '05', tag: 'Run & Évolution', badge: false,
     title: 'Run & Évolution',
     desc: 'Maintien et évolution continue par les mêmes experts seniors.',
-    intro: 'Un CRM livré commence à vivre. Montées de version, nouvelles fonctionnalités, besoins métiers qui changent. Sans accompagnement structuré, la plateforme se dégrade progressivement.',
+    intro: 'Un CRM livré commence à vivre. Montées de version, nouvelles fonctionnalités, besoins métiers qui changent. Sans accompagnement structuré, la plateforme CRM est votre patrimoine qui se dégrade progressivement.',
     approche: 'ShiftC propose un contrat annuel de Run & Évolution assuré par les mêmes experts qui maîtrisent votre plateforme. Pas de rotation d\'équipe, pas de montée en compétence à chaque intervention.',
     resultats: [
       'Une plateforme CRM toujours à jour, performante et sécurisée',
@@ -104,11 +104,20 @@ export default function Offres() {
       <div className="px-4 sm:px-6 lg:px-10 py-16">
         <div className="mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {OFFRES.map((o, i) => (
-              <div
-                key={o.num}
-                className="relative group text-left p-8 rounded-xl border border-white/[0.08] bg-white/[0.02] transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04]"
-              >
+            {OFFRES.map((o, i) => {
+              // Ajout d'un id unique pour chaque offre
+              let offreId = '';
+              if (o.title.toLowerCase().includes('salesforce')) offreId = 'offre-salesforce';
+              else if (o.title.toLowerCase().includes('dynamics')) offreId = 'offre-dynamics';
+              else if (o.title.toLowerCase().includes('adoption')) offreId = 'offre-crm-adoption';
+              else if (o.title.toLowerCase().includes('agent ia')) offreId = 'offre-agent-ia';
+              else if (o.title.toLowerCase().includes('run')) offreId = 'offre-run';
+              return (
+                <div
+                  key={o.num}
+                  id={offreId || undefined}
+                  className="relative group text-left p-8 rounded-xl border border-white/[0.08] bg-white/[0.02] transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04]"
+                >
                 {/* Numéro accent */}
                 <div className="text-6xl font-serif font-bold text-white/8 mb-4 leading-none">
                   {o.num}
@@ -190,7 +199,8 @@ export default function Offres() {
                 </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

@@ -1,22 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" width="480" height="160">
-  <!-- Fond -->
-  <rect x="0" y="0" width="480" height="160" fill="#0d1c12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 182" width="560" height="182">
+  <defs>
+    <!-- Gradient radial sur le cercle vert : plus lumineux en haut-gauche comme dans l'original -->
+    <radialGradient id="greenGrad" cx="38%" cy="32%" r="65%">
+      <stop offset="0%"   stop-color="#8ef5bc"/>
+      <stop offset="45%"  stop-color="#3ecf72"/>
+      <stop offset="100%" stop-color="#29a85a"/>
+    </radialGradient>
+  </defs>
 
-  <!-- Wordmark -->
-  <text x="40" y="108"
+  <!-- Anneaux concentriques subtils (6 anneaux, débordant du cadre) -->
+  <circle cx="420" cy="91" r="160" fill="none" stroke="#132a19" stroke-width="1.2"/>
+  <circle cx="420" cy="91" r="140" fill="none" stroke="#163020" stroke-width="1.4"/>
+  <circle cx="420" cy="91" r="120" fill="none" stroke="#1a3a25" stroke-width="1.6"/>
+  <circle cx="420" cy="91" r="102" fill="none" stroke="#1f472c" stroke-width="1.8"/>
+  <circle cx="420" cy="91" r="85"  fill="none" stroke="#255534" stroke-width="2"/>
+  <circle cx="420" cy="91" r="70"  fill="none" stroke="#2c653d" stroke-width="2.2"/>
+
+  <!-- Cercle principal vert avec gradient -->
+  <circle cx="420" cy="91" r="56" fill="url(#greenGrad)"/>
+
+  <!-- Lettre C sombre -->
+  <text x="420" y="91"
         font-family="'DM Sans','Helvetica Neue',Arial,sans-serif"
-        font-size="86" font-weight="700"
-        fill="#f0faf4" letter-spacing="-3">Shift</text>
-
-  <!-- Bulle verte -->
-  <circle cx="280" cy="65" r="44" fill="#6edea0"/>
-  <polygon points="236,90 236,115 264,115" fill="#6edea0"/>
-
-  <!-- C centré dans la bulle -->
-  <text x="280" y="65"
-        font-family="'DM Sans','Helvetica Neue',Arial,sans-serif"
-        font-size="60" font-weight="900"
-        fill="#0d1c12"
+        font-size="78" font-weight="900"
+        fill="#091810"
         text-anchor="middle"
         dominant-baseline="central">C</text>
+
+  <!-- Texte "Shift" en blanc gras -->
+  <text x="16" y="135"
+        font-family="'DM Sans','Helvetica Neue',Arial,sans-serif"
+        font-size="110" font-weight="800"
+        fill="#ffffff"
+        letter-spacing="-3">Shift</text>
 </svg>

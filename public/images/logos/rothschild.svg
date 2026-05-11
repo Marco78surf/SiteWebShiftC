@@ -1,3 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
-  <text x="110" y="28" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="400" font-size="16" fill="white" letter-spacing="1.5">ROTHSCHILD &amp; CO</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 60">
+  <text x="115" y="34" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="17" fill="#1A1A1A" letter-spacing="2">ROTHSCHILD</text>
+  <text x="115" y="52" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="12" fill="#C4A050" letter-spacing="4">&amp; CO</text>
 </svg>

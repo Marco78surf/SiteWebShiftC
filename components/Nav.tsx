@@ -61,16 +61,16 @@ export default function Nav() {
           }
         }}
         className="flex items-center flex-shrink-0"
-        style={{ height: '75.6px' }}
+        style={{ height: '52px' }}
       >
         <Image
           src="/images/logo-shiftc.svg"
           alt="ShiftC — Construisons votre CRM"
-          width={276}
+          width={300}
           height={98}
           priority
           className="object-contain object-left"
-          style={{ height: '75.6px', width: 'auto' }}
+          style={{ height: '52px', width: 'auto' }}
         />
       </button>
 

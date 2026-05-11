@@ -6,15 +6,15 @@ const VALEURS = [
   { num: '01', title: 'Transparence financière', desc: 'Une rémunération alignée sur la valeur que vous créez. Dialogue ouvert pour convenir ensemble des missions et des modalités.' },
   { num: '02', title: 'Confiance & autonomie', desc: 'Vous vous organisez comme vous le souhaitez. Aucune contrainte de présence inutile. Une seule règle : la satisfaction de nos clients.' },
   { num: '03', title: 'Expertise CRM', desc: 'Une expertise forte, multi-solutions, qui vous rend adaptable et employable. Avec l\'exigence de continuer à apprendre en permanence.' },
-  { num: '04', title: 'Esprit d\'équipe & droit de véto', desc: 'L\'harmonie du collectif est essentielle. Vous avez un droit de regard sur les prochains candidats — et eux auront le même sur vous.' },
-  { num: '05', title: 'Satisfaction client', desc: 'Notre contrainte la plus forte. Nous n\'avons pas beaucoup de règles — mais un client insatisfait est traité avec la plus haute importance.' },
+  { num: '04', title: 'Esprit d\'équipe & droit de véto', desc: 'L\'harmonie du collectif est essentielle. Vous avez un droit de regard sur les prochains candidats et eux auront le même sur vous.' },
+  { num: '05', title: 'Satisfaction client', desc: 'Notre contrainte la plus forte. Nous n\'avons pas beaucoup de règles à l\'exception de la satisfaction client que nous traitons avec la plus haute importance.' },
 ]
 
 const TEMOIGNAGES = [
   { initial: 'M', name: 'Matthieu', role: 'Expert CRM Salesforce · 1er collaborateur ShiftC', tag: 'Salesforce', quote: 'Ce que j\'aime ici, c\'est qu\'on ne fait pas semblant. On parle vrai avec les clients, on s\'entraide entre nous, et on livre du boulot dont on est fiers. Ça fait toute la différence.', body: 'Matthieu est le premier à avoir rejoint l\'aventure ShiftC. Ce qui le motive depuis le jour un : construire quelque chose de solide, avec des gens qu\'il respecte, sur des projets CRM où l\'exigence technique va de pair avec le relationnel.' },
-  { initial: 'R', name: 'Rodolphe', role: 'Business analyst Senior - MS Dynamics & Salesforce', tag: 'Salesforce · D365', quote: 'Après 20 ans dans l\'IT, j\'ai connu pas mal de structures. Chez ShiftC, personne ne regarde par-dessus mon épaule — on me fait confiance, et ça change tout. La transparence ici, c\'est pas un mot sur un mur, c\'est la réalité au quotidien.', body: 'Rodolphe intervient sur les problématiques CRM les plus complexes avec un calme désarmant. Ce qui le retient chez ShiftC : la liberté de se concentrer sur ce qu\'il fait le mieux, sans avoir à justifier chaque décision.' },
-  { initial: 'J', name: 'Jimmy', role: 'Tech lead MS Dynamics', tag: 'Salesforce', quote: 'J\'ai de la liberté, de vraies responsabilités, et zéro politique interne. Je gère mes projets, j\'organise mon temps, et je sais exactement où va l\'entreprise. C\'est simple, et ça me va.', body: 'Jimmy pense chaque solution CRM en mesurant ses impacts sur la globalité du SI. Rigoureux et créatif, il apprécie par-dessus tout de pouvoir travailler dans un cadre qui lui fait confiance — et qui attend la même chose en retour.' },
-  { initial: 'J', name: 'Jacques', role: 'Expert CRM · 4 ans dans le collectif', tag: 'Salesforce · D365', quote: '4 ans que je suis là, et je n\'ai jamais eu envie de partir. L\'ambiance est sincère, le management est transparent, et on se respecte. C\'est rare — alors j\'en profite.', body: 'Jacques accompagne ses clients autant sur le métier que sur la technique. Son engagement chez ShiftC tient en deux mots : confiance et authenticité. Quand on lui demande pourquoi il reste, il répond toujours la même chose : « Parce que je n\'ai aucune raison de partir. »' },
+  { initial: 'R', name: 'Rodolphe', role: 'Business analyst Senior - MS Dynamics & Salesforce', tag: 'Salesforce · D365', quote: 'Après 20 ans dans l\'IT, j\'ai connu pas mal de structures. Chez ShiftC, personne ne regarde par-dessus mon épaule. On me fait confiance, et ça change tout. La transparence ici, c\'est pas un mot sur un mur, c\'est la réalité au quotidien.', body: 'Rodolphe intervient sur les problématiques CRM les plus complexes avec un calme désarmant. Ce qui le retient chez ShiftC : la liberté de se concentrer sur ce qu\'il fait le mieux, sans avoir à justifier chaque décision.' },
+  { initial: 'J', name: 'Jimmy', role: 'Tech lead MS Dynamics', tag: 'Salesforce', quote: 'J\'ai de la liberté, de vraies responsabilités, et zéro politique interne. Je gère mes projets, j\'organise mon temps, et je sais exactement où va l\'entreprise. C\'est simple, et ça me va.', body: 'Jimmy pense chaque solution CRM en mesurant ses impacts sur la globalité du SI. Rigoureux et créatif, il apprécie par-dessus tout de pouvoir travailler dans un cadre qui lui fait confiance et qui attend la même chose en retour.' },
+  { initial: 'J', name: 'Jacques', role: 'Expert CRM · 4 ans dans le collectif', tag: 'Salesforce · D365', quote: '4 ans que je suis là, et je n\'ai jamais eu envie de partir. L\'ambiance est sincère, le management est transparent, et on se respecte. C\'est rare alors j\'en profite.', body: 'Jacques accompagne ses clients autant sur le métier que sur la technique. Son engagement chez ShiftC tient en deux mots : confiance et authenticité. Quand on lui demande pourquoi il reste, il répond toujours la même chose : « Parce que je n\'ai aucune raison de partir. »' },
   { initial: 'H', name: 'Hawa', role: 'Experte MS Dynamics & IA - Responsable des activités à Paris', tag: 'Dynamics 365', quote: 'Quand on m\'a proposé de porter ShiftC sur Paris, j\'ai dit oui tout de suite. J\'ai la confiance du collectif, des projets qui ont du sens, et la liberté de les mener comme je l\'entends.', body: 'Hawa a pris les rênes de l\'activité parisienne avec une énergie communicative. Son expertise Dynamics et IA, combinée à un excellent relationnel, en fait un pilier du développement de ShiftC sur les projets stratégiques en Île-de-France.' },
 ]
 
@@ -35,13 +35,12 @@ export default function Rejoindre() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <p className="text-[1rem] text-white/50 leading-[1.8]">
-              Chez ShiftC, vous choisissez vos missions, vous négociez votre rémunération,
-              et vous avez un droit de regard sur les personnes qui nous rejoignent.{' '}
+              Chez ShiftC, vous choisissez vos missions, vous négociez votre rémunération en fonction de la valeur que vous générez, et vous avez un droit de regard sur les personnes qui nous rejoignent.{' '}
               <strong className="text-white/80 font-medium">La seule règle : la satisfaction de nos clients.</strong>
             </p>
             <div className="text-[1rem] text-white/50 leading-[1.8]">
-              <p>ShiftC ne recrute pas des compétences. <strong className="text-white/80 font-medium">ShiftC recrute des personnalités.</strong> Nous cherchons des experts CRM confirmés qui partagent nos valeurs — autonomie, transparence, exigence.</p>
-              <p className="mt-4"><strong className="text-white/80 font-medium">Nous grandissons de manière raisonnée.</strong> Si vous cochez les cases techniques mais pas les valeurs, nous ne travaillerons pas ensemble. Si vous cochez les deux, parlons-en.</p>
+              <p>ShiftC ne recrute pas des compétences. <strong className="text-white/80 font-medium">ShiftC recrute des personnalités.</strong> Nous cherchons des experts CRM confirmés qui partagent nos valeurs : autonomie, transparence, exigence.</p>
+              <p className="mt-4"><strong className="text-white/80 font-medium">Nous grandissons de manière raisonnée.</strong> C&apos;est sans doute pour cela que nous avons un turn-over très faible. Si vous cochez les cases techniques, c&apos;est bien mais si vous partagez nos valeurs, nous travaillerons ensemble. Si vous cochez les deux, parlons-en.</p>
             </div>
           </div>
         </div>
@@ -125,10 +124,24 @@ export default function Rejoindre() {
             Que vous soyez client ou futur Shifteur,<br />
             <em className="not-italic text-sc-green">c&apos;est ici que tout commence.</em>
           </h3>
-          <p className="text-[1rem] text-white/45 leading-[1.8] max-w-xl mx-auto mb-12">
+          <p className="text-[1rem] text-white/45 leading-[1.8] max-w-xl mx-auto mb-10">
             Vous avez un projet CRM à mener, ou vous cherchez un collectif qui vous ressemble ?
             Choisissez votre chemin.
           </p>
+
+          {/* Convergence anchor — target for the arc animation */}
+          <div id="cta-center" className="flex items-center justify-center mb-12">
+            <div className="relative flex items-center justify-center">
+              {/* Outer concentric rings */}
+              <div className="absolute w-[67px] h-[67px] rounded-full border border-[#3ecf72]/12 animate-[spin_28s_linear_infinite_reverse]" />
+              <div className="absolute w-11 h-11 rounded-full border border-[#3ecf72]/20" />
+              {/* Core */}
+              <div className="relative w-7 h-7 rounded-full flex items-center justify-center shadow-[0_0_16px_3px_rgba(62,207,114,0.22)]"
+                style={{ background: 'radial-gradient(circle at 38% 32%, #8ef5bc 0%, #3ecf72 45%, #29a85a 100%)' }}>
+                <span className="font-sans text-[0.875rem] font-black text-[#091810] leading-none select-none">C</span>
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Option 1 — Projet */}
@@ -136,8 +149,13 @@ export default function Rejoindre() {
               href="/contact"
               className="group rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] p-8 sm:p-10 flex flex-col items-center gap-5 transition-all duration-300 hover:border-sc-green/30 hover:bg-white/[0.04] no-underline"
             >
-              <div className="w-14 h-14 rounded-full border border-sc-green/25 bg-sc-green/10 flex items-center justify-center text-[1.5rem] group-hover:bg-sc-green/20 transition-colors">
-                💼
+              <div className="w-14 h-14 rounded-full border border-sc-green/25 bg-sc-green/10 flex items-center justify-center group-hover:bg-sc-green/20 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                  <rect x="2" y="7" width="20" height="14" rx="2" stroke="#6edea0" stroke-width="1.6"/>
+                  <path d="M2 12h20" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 12v3" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
               </div>
               <div className="text-[1.1rem] font-semibold text-white/85">Nous contacter pour votre projet</div>
               <p className="text-[0.85rem] text-white/45 leading-[1.7]">
@@ -154,8 +172,13 @@ export default function Rejoindre() {
               href="/candidat"
               className="group rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] p-8 sm:p-10 flex flex-col items-center gap-5 transition-all duration-300 hover:border-sc-green/30 hover:bg-white/[0.04] no-underline"
             >
-              <div className="w-14 h-14 rounded-full border border-sc-green/25 bg-sc-green/10 flex items-center justify-center text-[1.5rem] group-hover:bg-sc-green/20 transition-colors">
-                🤝
+              <div className="w-14 h-14 rounded-full border border-sc-green/25 bg-sc-green/10 flex items-center justify-center group-hover:bg-sc-green/20 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="9" cy="7" r="3" stroke="#6edea0" stroke-width="1.6"/>
+                  <path d="M3 19c0-3.314 2.686-6 6-6" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                  <circle cx="17" cy="10" r="2.5" stroke="#6edea0" stroke-width="1.6"/>
+                  <path d="M13 19c0-2.761 1.791-5 4-5s4 2.239 4 5" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
               </div>
               <div className="text-[1.1rem] font-semibold text-white/85">Rejoindre nos Shifteurs</div>
               <p className="text-[0.85rem] text-white/45 leading-[1.7]">

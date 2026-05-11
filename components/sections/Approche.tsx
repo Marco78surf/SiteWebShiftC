@@ -2,13 +2,13 @@
 const CONVICTIONS = [
   {
     num: '01',
-    title: 'Un projet CRM sans senior au cadrage, c\'est un projet qui déraille.',
-    body: 'La plupart des échecs CRM ne se jouent pas en déploiement — ils se jouent dans les premières semaines. Chez ShiftC, chaque projet est cadré et suivi par un expert senior, de bout en bout. La séniorité n\'est pas une option : c\'est le fondement de notre modèle.',
+    title: 'Un projet en manque de profils senior au démarrage est souvent mal engagé et les conséquences se paieront plus tard',
+    body: 'La plupart des échecs CRM ne se jouent pas en déploiement. Ils se jouent dans les premières semaines. Chez ShiftC, chaque projet est cadré et suivi par un expert senior, de bout en bout. La séniorité n\'est pas une option : c\'est le fondement de notre modèle.',
   },
   {
     num: '02',
     title: 'L\'IA n\'est pas un argument commercial. C\'est une pratique quotidienne.',
-    body: 'Nos consultants utilisent les meilleurs LLMs tous les jours — pour générer de la documentation, automatiser les tests, accélérer les revues de configuration. Ce n\'est pas un service vendu en plus : c\'est intégré dans chaque mission.',
+    body: 'Nos consultants utilisent les meilleurs LLMs tous les jours pour générer de la documentation, automatiser les tests, accélérer les revues de configuration. Ce n\'est pas un service vendu en plus : c\'est intégré dans chaque mission.',
   },
   {
     num: '03',

@@ -7,19 +7,21 @@ const ENJEUX = [
     tag: 'Salesforce · Dynamics 365',
     title: 'Votre projet CRM prend du retard. Et personne ne vous dit vraiment pourquoi.',
     quote: 'On nous avait promis un go-live en septembre. On est en janvier, le périmètre a bougé trois fois, et les équipes métiers commencent à décrocher.',
-    body: 'Les dérives de planning CRM ont rarement une cause unique. Elles s\'accumulent : un cadrage initial trop vague, des intégrations sous-estimées, des décisions prises sans les bonnes personnes dans la pièce. Et souvent, une équipe prestataire qui découvre les vrais enjeux en cours de route.',
+    body: "Les dérives de planning CRM ont rarement une cause unique. Elles s'accumulent : un cadrage initial trop vague, des intégrations sous-estimées, des décisions prises sans les bonnes personnes dans la pièce. Et souvent, une équipe prestataire qui découvre les vrais enjeux en cours de route.",
     bold: 'Un expert placé dès le cadrage change tout.',
-    rest: ' Pas parce qu\'il travaille plus vite — mais parce qu\'il sait où sont les pièges avant d\'y tomber. Il pose les bonnes questions au bon moment, tient le périmètre et garde les équipes alignées de bout en bout.',
+    rest: " Pas parce qu'il travaille plus vite mais parce qu'il sait où sont les pièges avant d'y tomber. Il pose les bonnes questions au bon moment, tient le périmètre et garde les équipes alignées de bout en bout.",
     link: 'Voir notre approche Salesforce & Dynamics →',
+    href: '#offres',
   },
   {
     tag: 'Adoption · Go-live',
     title: 'Le CRM est livré. Mais vos équipes ne l\'utilisent pas.',
     quote: 'On a investi des centaines de milliers d\'euros dans ce projet. Six mois après le go-live, le taux d\'adoption est à 40 %.',
-    body: 'L\'adoption ne se décrète pas le jour du go-live. Elle se construit tout au long du projet — dans la façon dont les besoins métiers sont recueillis, dans les choix de configuration, dans la manière dont les équipes sont impliquées bien avant la formation finale.',
+    body: 'L\'adoption ne se décrète pas le jour du go-live. Elle se construit tout au long du projet dans la façon dont les besoins métiers sont recueillis, dans les choix de configuration, dans la manière dont les équipes sont impliquées bien avant la formation finale.',
     bold: 'Chez ShiftC, l\'adoption démarre dès le cadrage, pas du plan de communication.',
     rest: ' Nos consultants travaillent avec les utilisateurs finaux dès les premières semaines pour que le CRM soit déjà le leur au moment où il est livré.',
     link: 'Voir notre offre CRM Adoption →',
+    href: '#offres',
   },
   {
     tag: 'Agent IA · CRM',
@@ -29,15 +31,17 @@ const ENJEUX = [
     bold: 'Notre approche part du problème, pas de la technologie.',
     rest: ' On identifie d\'abord les cas d\'usage à fort ROI, on évalue la maturité de vos données, puis on construit une architecture agentique intégrée nativement dans vos flux existants.',
     link: 'Voir notre offre Agent IA CRM →',
+    href: '#offres',
   },
   {
     tag: 'Run · Maintenance',
     title: 'Votre CRM évolue en permanence. Votre prestataire, lui, change tous les six mois.',
-    quote: 'À chaque nouveau besoin, on réexplique le contexte depuis zéro. Entre les montées de version, les évolutions réglementaires et les demandes métiers, on passe plus de temps à gérer nos prestataires qu\'à piloter notre CRM.',
-    body: 'Un CRM livré commence à vivre — et donc à évoluer. Montées de version, nouvelles fonctionnalités, optimisations de performance, besoins métiers qui changent. Sans un partenaire de confiance qui s\'inscrit dans le temps long, chaque intervention repart de zéro et vos équipes se fatiguent.',
+    quote: 'Nos prestataires manquent d\'autonomie et cela nous prend du temps que nous ne consacrons pas à piloter notre CRM',
+    body: 'Un CRM livré commence à vivre et donc à évoluer. Montées de version, nouvelles fonctionnalités, optimisations de performance, besoins métiers qui changent. Sans un partenaire de confiance qui s\'inscrit dans le temps long, chaque intervention repart de zéro et vos équipes se fatiguent.',
     bold: 'Notre contrat Run & Évolution est assuré par les mêmes experts seniors qui maîtrisent votre plateforme.',
     rest: ' Pas de rotation d\'équipe, pas de montée en compétence à chaque intervention.',
     link: 'Voir notre offre Run & Évolution →',
+    href: '#offres',
   },
   {
     tag: 'Séniorité · Expertise',
@@ -45,8 +49,9 @@ const ENJEUX = [
     quote: 'Le profil présenté en avant-vente était excellent. Celui qui est arrivé sur le projet, c\'est une autre histoire.',
     body: 'C\'est l\'un des irritants les plus fréquents dans les projets CRM. Un cabinet remporte un appel d\'offres avec ses meilleurs profils, puis place des consultants juniors une fois le contrat signé. Le client paie le prix de la séniorité sans en avoir la valeur.',
     bold: 'Chez ShiftC, le modèle est construit différemment.',
-    rest: ' Notre collectif est composé exclusivement d\'experts confirmés — des consultants qui choisissent leurs missions et s\'impliquent en conséquence. Ce que vous voyez en avant-vente, c\'est ce que vous avez sur votre projet.',
+    rest: ' Notre collectif est composé exclusivement d\'experts confirmés, des consultants qui choisissent leurs missions et s\'impliquent en conséquence. Ce que vous voyez en avant-vente, c\'est ce que vous avez sur votre projet.',
     link: 'Découvrir notre approche →',
+    href: '#offres',
   },
 ]
 
@@ -68,7 +73,7 @@ export default function Enjeux() {
           <p className="text-[1rem] text-white/50 leading-[1.8]">
             Derrière chaque projet CRM, il y a une direction qui doit rendre des comptes,
             des équipes qu&apos;il faut embarquer, et des engagements qu&apos;il faut tenir.
-            Voici les situations que nous <strong className="text-white/70 font-medium">combattons</strong>.
+            Voici les situations que nous <strong className="text-white/70 font-medium">vous faisons éviter</strong>.
           </p>
         </div>
       </div>
@@ -116,9 +121,12 @@ export default function Enjeux() {
                   <strong className="text-white/82 font-medium">{e.bold}</strong>
                   <span className="text-white/52">{e.rest}</span>
                 </p>
-                <div className="mt-6 text-[0.8rem] font-medium text-sc-green border-b border-[#6edea0]/30 pb-[0.15rem] inline-block cursor-pointer hover:border-sc-green transition-colors">
+                <a
+                  href={e.href}
+                  className="mt-6 text-[0.8rem] font-medium text-sc-green border-b border-[#6edea0]/30 pb-[0.15rem] inline-block cursor-pointer hover:border-sc-green transition-colors"
+                >
                   {e.link}
-                </div>
+                </a>
               </div>
             )}  
           </div>

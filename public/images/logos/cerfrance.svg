@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70">
+  <!-- Top-left: amber -->
+  <rect x="3" y="3" width="30" height="30" fill="#F0A500"/>
+  <circle cx="18" cy="13" r="6" fill="white"/>
+  <path d="M11 33 Q11 22 18 22 Q25 22 25 33 Z" fill="white"/>
+
+  <!-- Top-right: coral -->
+  <rect x="35" y="3" width="30" height="30" fill="#C94B2B"/>
+  <circle cx="50" cy="13" r="6" fill="white"/>
+  <path d="M43 33 Q43 22 50 22 Q57 22 57 33 Z" fill="white"/>
+
+  <!-- Bottom-left: teal -->
+  <rect x="3" y="35" width="30" height="30" fill="#1BAFB8"/>
+  <circle cx="18" cy="45" r="6" fill="white"/>
+  <path d="M11 65 Q11 54 18 54 Q25 54 25 65 Z" fill="white"/>
+
+  <!-- Bottom-right: dark gray -->
+  <rect x="35" y="35" width="30" height="30" fill="#4A4A4A"/>
+  <circle cx="50" cy="45" r="6" fill="white"/>
+  <path d="M43 65 Q43 54 50 54 Q57 54 57 65 Z" fill="white"/>
+
+  <!-- CERFRANCE -->
+  <text x="155" y="39" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="400" font-size="19" fill="#3D3D3D" letter-spacing="3">CERFRANCE</text>
+</svg>

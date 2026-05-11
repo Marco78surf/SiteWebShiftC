@@ -16,11 +16,16 @@ const STATS = [
     label: 'Intégrée au delivery',
     green: false,
   },
+  {
+    num: '30+',
+    label: 'Projets/missions délivrés',
+    green: false,
+  },
 ]
 
 export default function Stats() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 border-t border-white/[0.07]" style={{ minHeight: '87px' }}>
+    <div className="grid grid-cols-1 sm:grid-cols-4 border-t border-white/[0.07]" style={{ minHeight: '87px' }}>
       {STATS.map((s, i) => (
         <div
           key={i}

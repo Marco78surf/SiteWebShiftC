@@ -15,6 +15,9 @@ const CLIENTS = [
   { name: 'Rothschild & Co', logo: '/images/logos/rothschild.svg' },
   { name: 'Ardian', logo: '/images/logos/ardian.svg' },
   { name: 'Orange Business', logo: '/images/logos/orange-business.svg' },
+  { name: 'HelloWork', logo: '/images/logos/hellowork.svg' },
+  { name: 'Labocea', logo: '/images/logos/labocea.svg' },
+  { name: 'CER France', logo: '/images/logos/cerfrance.svg' },
 ]
 
 export default function Realisations() {
@@ -30,7 +33,7 @@ export default function Realisations() {
             Des projets livrés. Des équipes <em className="not-italic text-sc-green">convaincues</em>.
           </h2>
           <p className="text-[1rem] text-white/50 leading-[1.8] max-w-[720px]">
-            Six exemples de missions menées par nos experts seniors — du cadrage au go-live,
+            Six exemples de missions menées par nos experts seniors, du cadrage au go-live,
             sur Salesforce, Dynamics 365 et les agents IA.
           </p>
         </div>
@@ -82,13 +85,12 @@ export default function Realisations() {
               <div
                 key={i}
                 className="
-                  flex items-center justify-center h-12 px-6 flex-shrink-0
-                  border border-white/[0.08] rounded-lg min-w-[160px]
-                  hover:border-white/20 transition-all cursor-default
-                  opacity-40 hover:opacity-70
+                  flex items-center justify-center h-14 px-6 flex-shrink-0
+                  rounded-lg min-w-[160px] bg-white
+                  hover:shadow-[0_0_0_2px_#6edea0] transition-all cursor-default
                 "
               >
-                <img src={c.logo} alt={c.name} className="h-7 w-auto" />
+                <img src={c.logo} alt={c.name} className="h-8 w-auto max-w-[140px] object-contain" />
               </div>
             ))}
           </div>

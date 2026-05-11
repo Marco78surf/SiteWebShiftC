@@ -3,37 +3,58 @@
 import { useState, useRef } from 'react'
 
 const PROCESS = [
-  { num: '01', title: 'Cadrer la collaboration', desc: 'On échange sur vos aspirations, l\'adéquation de votre projet professionnel avec ShiftC, et votre adhésion à nos valeurs. Les compétences techniques ne suffisent pas — la personnalité compte autant.' },
-  { num: '02', title: 'Validation avec l\'équipe', desc: 'Un ou plusieurs consultants ShiftC échangent avec vous pour valider votre expertise CRM. C\'est aussi l\'occasion de prendre le pouls du collectif — et pour l\'équipe d\'exercer son droit de regard.' },
-  { num: '03', title: 'Journée « Vis ma vie »', desc: 'Une journée au sein de ShiftC pour finaliser les modalités de la collaboration — dans un esprit d\'immersion, pas d\'entretien. Vous découvrez le quotidien du collectif de l\'intérieur.' },
+  { num: '01', title: 'Cadrer la collaboration', desc: 'On échange sur vos aspirations, l\'adéquation de votre projet professionnel avec ShiftC, et votre adhésion à nos valeurs. Les compétences techniques ne suffisent pas. La personnalité compte autant.' },
+  { num: '02', title: 'Validation avec l\'équipe', desc: 'Un ou plusieurs consultants ShiftC échangent avec vous pour valider votre expertise CRM. C\'est aussi l\'occasion de prendre le pouls du collectif et pour l\'équipe d\'exercer son droit de regard.' },
+  { num: '03', title: 'Journée « Vis ma vie »', desc: 'Une journée au sein de ShiftC pour finaliser les modalités de la collaboration dans un esprit d\'immersion, pas d\'entretien. Vous découvrez le quotidien du collectif de l\'intérieur.' },
 ]
+
+const CV_MAX_SIZE = 5 * 1024 * 1024 // 5 MB
+const CV_ALLOWED_TYPES = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+const CV_ALLOWED_EXTS = ['.pdf', '.doc', '.docx']
 
 export default function Candidat() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [captcha, setCaptcha] = useState(false)
+  const [cvError, setCvError] = useState('')
+  const [cvName, setCvName] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
+  const cvInputRef = useRef<HTMLInputElement>(null)
 
   const inputClass = 'w-full bg-sc-bg2 border border-white/12 rounded-md px-4 py-3 text-[0.84rem] text-sc-text placeholder:text-white/18 focus:outline-none focus:border-sc-green transition-colors'
+
+  const handleCvChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCvError('')
+    setCvName('')
+    const file = e.target.files?.[0]
+    if (!file) return
+    const ext = file.name.toLowerCase().slice(file.name.lastIndexOf('.'))
+    if (!CV_ALLOWED_TYPES.includes(file.type) && !CV_ALLOWED_EXTS.includes(ext)) {
+      setCvError('Format accepté : PDF, DOC, DOCX')
+      e.target.value = ''
+      return
+    }
+    if (file.size > CV_MAX_SIZE) {
+      setCvError('Taille maximale : 5 Mo')
+      e.target.value = ''
+      return
+    }
+    setCvName(file.name)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!captcha) return alert('Veuillez cocher le captcha')
+    if (cvError) return
     const form = formRef.current!
     const data = new FormData(form)
     setLoading(true)
     try {
       const res = await fetch('/api/candidature', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          prenom: data.get('prenom'),
-          nom: data.get('nom'),
-          email: data.get('email'),
-          message: data.get('message'),
-        }),
+        body: data,
       })
-      if (res.ok) { setSubmitted(true); form.reset() }
+      if (res.ok) { setSubmitted(true); form.reset(); setCvName('') }
     } finally {
       setLoading(false)
     }
@@ -52,7 +73,7 @@ export default function Candidat() {
             <em className="not-italic text-sc-green"> Écrivez-nous.</em>
           </h2>
           <p className="text-[1rem] text-white/50 leading-[1.8] max-w-[720px]">
-            Pas d&apos;offre d&apos;emploi ouverte en permanence — nous recrutons au rythme
+            Pas d&apos;offre d&apos;emploi ouverte en permanence. Nous recrutons au rythme
             des belles rencontres. Si votre profil et vos valeurs correspondent,
             on trouvera un contexte pour collaborer.
           </p>
@@ -138,6 +159,34 @@ export default function Candidat() {
               <div className="flex flex-col gap-1.5">
                 <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">Message</label>
                 <textarea name="message" required rows={4} placeholder="Parlez-nous de vous — votre parcours, ce qui vous attire chez ShiftC, vos disponibilités..." className={inputClass + ' resize-none'} />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[0.72rem] font-medium text-white/45 uppercase tracking-[0.04em]">CV <span className="normal-case text-white/25">(optionnel — PDF, DOC, DOCX · 5 Mo max)</span></label>
+                <div
+                  className="relative w-full bg-sc-bg2 border border-white/12 rounded-md px-4 py-3 flex items-center gap-3 cursor-pointer hover:border-sc-green/50 transition-colors"
+                  onClick={() => cvInputRef.current?.click()}
+                >
+                  <span className="text-sc-green/70 text-sm">↑</span>
+                  <span className={`text-[0.84rem] ${cvName ? 'text-sc-text' : 'text-white/18'}`}>
+                    {cvName || 'Déposer ou choisir un fichier…'}
+                  </span>
+                  {cvName && (
+                    <button
+                      type="button"
+                      className="ml-auto text-white/30 hover:text-white/60 transition-colors text-xs"
+                      onClick={(e) => { e.stopPropagation(); setCvName(''); if (cvInputRef.current) cvInputRef.current.value = '' }}
+                    >✕</button>
+                  )}
+                  <input
+                    ref={cvInputRef}
+                    name="cv"
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    className="sr-only"
+                    onChange={handleCvChange}
+                  />
+                </div>
+                {cvError && <p className="text-[0.75rem] text-red-400">{cvError}</p>}
               </div>
               <button type="button" onClick={() => setCaptcha(!captcha)}
                 className="flex items-center gap-3 bg-sc-bg2 border border-white/10 rounded-md px-4 py-3 cursor-pointer">

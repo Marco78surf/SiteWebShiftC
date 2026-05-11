@@ -1,3 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 48" fill="none">
-  <text x="70" y="32" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-weight="900" font-size="26" fill="white" letter-spacing="3">SNCF</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80">
+  <defs>
+    <linearGradient id="sncfGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A0207A"/>
+      <stop offset="100%" stop-color="#E2001A"/>
+    </linearGradient>
+  </defs>
+  <!-- Banner shape with slanted left and right edges -->
+  <path d="M18 8 Q6 8 4 20 L4 60 Q4 72 18 72 L162 72 Q174 72 176 60 L176 20 Q174 8 162 8 Z" fill="url(#sncfGrad)"/>
+  <text x="90" y="53" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="38" fill="white" letter-spacing="2">SNCF</text>
 </svg>

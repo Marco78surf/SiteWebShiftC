@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70">
+  <!-- 4-petal flower icon -->
+  <!-- Top-left: coral -->
+  <rect x="4" y="4" width="22" height="22" rx="7" fill="#F47B72"/>
+  <!-- Top-right: green -->
+  <rect x="29" y="4" width="22" height="22" rx="7" fill="#3DB87A"/>
+  <!-- Bottom-left: teal person figure -->
+  <circle cx="15" cy="33" r="5" fill="#52B8CC"/>
+  <path d="M8 52 Q8 43 15 43 Q22 43 22 52 Z" fill="#52B8CC"/>
+  <!-- Bottom-right: yellow/amber -->
+  <rect x="29" y="29" width="22" height="22" rx="7" fill="#F5A623"/>
+
+  <!-- Text "Labocea" -->
+  <text x="148" y="40" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="28" fill="#2BBAC5">Labocea</text>
+  <!-- Subtitle -->
+  <text x="148" y="56" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="9" fill="#2BBAC5" letter-spacing="3">AU SERVICE DU VIVANT</text>
+</svg>

@@ -18,9 +18,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: { index: true, follow: true },
-  icons: {
-    icon: '/icon.svg',
-  },
 }
 
 export const viewport = {
