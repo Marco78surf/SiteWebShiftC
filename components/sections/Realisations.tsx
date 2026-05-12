@@ -1,11 +1,11 @@
 'use client'
 const REALISATIONS = [
-  { tag: 'Salesforce', title: 'Déploiement Sales Cloud pour une direction commerciale de 200 utilisateurs', meta: 'Industrie · Sales Cloud · CPQ · 8 mois', img: '/images/real-salesforce.svg' },
-  { tag: 'Dynamics 365', title: 'Migration CRM vers Dynamics 365 Sales & Service pour un groupe de services', meta: 'Services B2B · D365 · Power Platform · 12 mois', img: '/images/real-dynamics.svg' },
-  { tag: 'Agent IA', title: 'Déploiement d\'Agentforce sur Salesforce pour automatiser le service client', meta: 'Assurance · Agentforce · Claude · 4 mois', img: '/images/real-agentforce.svg' },
-  { tag: 'CRM Adoption', title: 'Plan d\'adoption post go-live pour un Salesforce à 40 % d\'utilisation', meta: 'Distribution · Adoption · Formation · 6 mois', img: '/images/real-adoption.svg' },
-  { tag: 'Run & Évolution', title: 'Partenaire Run depuis 3 ans sur une plateforme Dynamics 365 multi-entités', meta: 'Énergie · D365 · Dataverse · Contrat annuel', img: '/images/real-run.svg' },
-  { tag: 'Agent IA', title: 'Intégration Microsoft Copilot for Sales sur Dynamics 365 pour une force de vente internationale', meta: 'Retail · Copilot · D365 · 5 mois', img: '/images/real-copilot.svg' },
+  { tag: 'Salesforce', title: 'Déploiement de Salesforce CPQ pour industrialiser la production de devis et aligner l\'ensemble de l\'organisation sur un catalogue d\'offres unifié', meta: 'Services · Sales Cloud · CPQ · 12 mois', img: '/images/real-salesforce.svg' },
+  { tag: 'Dynamics 365', title: 'Évolution d\'une plateforme CRM Dynamics 365 multi-instances dans un environnement bancaire international, sous contraintes réglementaires et exigences élevées de sécurité des données', meta: 'Banque · D365 · Dataverse · 36 mois', img: '/images/real-dynamics.svg' },
+  { tag: 'Agent IA', title: 'Industrialisation d\'agents IA sur Salesforce pour automatiser la gestion du service client, qualifier les opportunités commerciales en amont et accélérer la préparation des rendez-vous sales', meta: 'Industrie · Sales Cloud · Service Cloud · 9 mois', img: '/images/real-agentforce.svg' },
+  { tag: 'CRM Adoption', title: 'Redressement de l\'adoption d\'une plateforme Dynamics 365 multi-cloud après go-live : diagnostic d\'usage, plan de formation ciblé et accompagnement au changement pour dépasser les 30 % d\'utilisation', meta: 'Services · D365 · Adoption · 6 mois', img: '/images/real-adoption.svg' },
+  { tag: 'Run & Évolution', title: 'Partenaire run depuis 4 ans pour une plateforme Salesforce complète (Sales Cloud, Experience Cloud, Community) avec un haut niveau d\'intégration : maintien en condition opérationnelle et évolutions majeures', meta: 'Industrie · Sales Cloud · Experience Cloud · Contrat annuel', img: '/images/real-run.svg' },
+  { tag: 'Copilot for Sales', title: 'Industrialisation d\'agents Copilot for Sales sur Dynamics 365, avec intégration MCP Server pour unifier les données métier en temps réel', meta: 'Banque · D365 · Copilot for Sales · 18 mois', img: '/images/real-copilot.svg' },
 ]
 
 const CLIENTS = [
