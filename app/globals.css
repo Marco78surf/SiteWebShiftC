@@ -18,6 +18,16 @@
   }
 }
 
+@keyframes heroZoom {
+  0%   { transform: scale(1)   translate(0, 0); }
+  100% { transform: scale(8.8) translate(-32%, 12%); }
+}
+
+.hero-zoom {
+  animation: heroZoom 3.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 @layer utilities {
   .font-fraunces { font-family: 'Fraunces', serif; }
   .text-sc-green  { color: #6edea0; }
