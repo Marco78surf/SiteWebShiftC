@@ -61,6 +61,7 @@ export default function RiverCanvas() {
     }
 
     function resize() {
+      if (!canvas) return
       const dpr = window.devicePixelRatio || 1
       vw = window.innerWidth
       vh = window.innerHeight
