@@ -33,6 +33,7 @@ export default function RiverCanvas() {
     let vw = 0
     let vh = 0
     let convergenceY = 0
+    let convergenceX = 0
 
     /* particles ------------------------------------------------- */
     const particles: Particle[][] = BRANCH_X.map(() =>
@@ -45,13 +46,16 @@ export default function RiverCanvas() {
     /* helpers --------------------------------------------------- */
     function updateConvergence() {
       const el =
+        document.getElementById('letter-c') ??
         document.getElementById('cta-center') ??
         document.getElementById('equipe') ??
         document.querySelector('footer')
       if (el) {
         const r = el.getBoundingClientRect()
+        convergenceX = r.left + r.width * 0.5
         convergenceY = r.top + window.scrollY + r.height * 0.5
       } else {
+        convergenceX = vw * 0.5
         convergenceY = document.documentElement.scrollHeight
       }
     }
@@ -82,7 +86,7 @@ export default function RiverCanvas() {
     function getAnchors(idx: number, time: number) {
       const seed = idx * 1.618 + 0.414
       const sx = BRANCH_X[idx] * vw
-      const ex = vw * 0.5
+      const ex = convergenceX || vw * 0.5
       return ANCHOR_T.map((frac, i) => ({
         x: sx + (ex - sx) * frac + osc(time, seed, i, i),
         y: frac * convergenceY,
@@ -172,7 +176,7 @@ export default function RiverCanvas() {
 
     /* convergence glow ------------------------------------------ */
     function drawConvergence(time: number) {
-      const cx = vw * 0.5
+      const cx = convergenceX || vw * 0.5
       const cy = convergenceY
       const r = 3 + Math.sin(time * 1.4) * 2
 
@@ -213,6 +217,8 @@ export default function RiverCanvas() {
 
     /* boot ------------------------------------------------------ */
     resize()
+    // Re-measure after layout settles (fonts, images, dynamic content)
+    setTimeout(updateConvergence, 300)
     animId = requestAnimationFrame(frame)
 
     const onResize = () => resize()

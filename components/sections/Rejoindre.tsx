@@ -136,7 +136,7 @@ export default function Rejoindre() {
               <div className="absolute w-[67px] h-[67px] rounded-full border border-[#3ecf72]/12 animate-[spin_28s_linear_infinite_reverse]" />
               <div className="absolute w-11 h-11 rounded-full border border-[#3ecf72]/20" />
               {/* Core */}
-              <div className="relative w-7 h-7 rounded-full flex items-center justify-center shadow-[0_0_16px_3px_rgba(62,207,114,0.22)]"
+              <div id="letter-c" className="relative w-7 h-7 rounded-full flex items-center justify-center shadow-[0_0_16px_3px_rgba(62,207,114,0.22)]"
                 style={{ background: 'radial-gradient(circle at 38% 32%, #8ef5bc 0%, #3ecf72 45%, #29a85a 100%)' }}>
                 <span className="font-sans text-[0.875rem] font-black text-[#091810] leading-none select-none">C</span>
               </div>
@@ -151,10 +151,10 @@ export default function Rejoindre() {
             >
               <div className="w-14 h-14 rounded-full border border-sc-green/25 bg-sc-green/10 flex items-center justify-center group-hover:bg-sc-green/20 transition-colors">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
-                  <rect x="2" y="7" width="20" height="14" rx="2" stroke="#6edea0" stroke-width="1.6"/>
-                  <path d="M2 12h20" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M12 12v3" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="#6edea0" strokeWidth="1.6" strokeLinecap="round"/>
+                  <rect x="2" y="7" width="20" height="14" rx="2" stroke="#6edea0" strokeWidth="1.6"/>
+                  <path d="M2 12h20" stroke="#6edea0" strokeWidth="1.6" strokeLinecap="round"/>
+                  <path d="M12 12v3" stroke="#6edea0" strokeWidth="1.6" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="text-[1.1rem] font-semibold text-white/85">Nous contacter pour votre projet</div>
@@ -174,10 +174,10 @@ export default function Rejoindre() {
             >
               <div className="w-14 h-14 rounded-full border border-sc-green/25 bg-sc-green/10 flex items-center justify-center group-hover:bg-sc-green/20 transition-colors">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="9" cy="7" r="3" stroke="#6edea0" stroke-width="1.6"/>
-                  <path d="M3 19c0-3.314 2.686-6 6-6" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
-                  <circle cx="17" cy="10" r="2.5" stroke="#6edea0" stroke-width="1.6"/>
-                  <path d="M13 19c0-2.761 1.791-5 4-5s4 2.239 4 5" stroke="#6edea0" stroke-width="1.6" stroke-linecap="round"/>
+                  <circle cx="9" cy="7" r="3" stroke="#6edea0" strokeWidth="1.6"/>
+                  <path d="M3 19c0-3.314 2.686-6 6-6" stroke="#6edea0" strokeWidth="1.6" strokeLinecap="round"/>
+                  <circle cx="17" cy="10" r="2.5" stroke="#6edea0" strokeWidth="1.6"/>
+                  <path d="M13 19c0-2.761 1.791-5 4-5s4 2.239 4 5" stroke="#6edea0" strokeWidth="1.6" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="text-[1.1rem] font-semibold text-white/85">Rejoindre nos Shifteurs</div>
