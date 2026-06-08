@@ -51,8 +51,7 @@ export default function Hero() {
 
       {/* Droite — photo */}
       <div className="relative overflow-hidden h-48 md:h-full">
-        <div className="hero-zoom absolute inset-0">
-          <Image
+        <Image
             src="/images/hero-accueil.jpg"
             alt="Vue aérienne d'un delta"
             fill
@@ -60,7 +59,6 @@ export default function Hero() {
             style={{ objectFit: 'cover', objectPosition: '40% center' }}
             sizes="(max-width: 768px) 100vw, 42vw"
           />
-        </div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0b1a0f, rgba(11,26,15,0.55), transparent)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '25%', background: 'linear-gradient(to top, rgba(11,26,15,0.45), transparent)', pointerEvents: 'none' }} />
         <p style={{ position: 'absolute', bottom: 8, right: 12, fontSize: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.07em', color: 'rgba(240,237,230,0.16)' }}>
