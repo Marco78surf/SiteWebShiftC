@@ -25,8 +25,9 @@ export default function RiverCanvas() {
   useEffect(() => {
     const canvas = ref.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    const ctxOrNull = canvas.getContext('2d')
+    if (!ctxOrNull) return
+    const ctx: CanvasRenderingContext2D = ctxOrNull
 
     let animId = 0
     let scrollY = 0
